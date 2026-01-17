@@ -21,7 +21,7 @@ importers:
         specifier: ^4.0.17
         version: 4.0.17(@opentelemetry/api@1.9.0)(@types/node@25.0.9)(sass@1.77.6)(yaml@2.8.2)
 
-  apps/library-tools:
+  apps/admin:
     dependencies:
       '@fast-csv/format':
         specifier: ^5.0.5
