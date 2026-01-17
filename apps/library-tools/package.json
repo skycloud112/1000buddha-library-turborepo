@@ -10,10 +10,9 @@
     "test": "TZ=UTC vitest run"
   },
   "dependencies": {
-    "@repo/csv": "workspace:*",
+    "@fast-csv/format": "^5.0.5",
     "@repo/db": "workspace:*",
     "@repo/entities": "workspace:*",
-    "@repo/generate-barcode-labels": "workspace:*",
     "@mui/icons-material": "^7.3.7",
     "@mui/lab": "7.0.1-beta.21",
     "@mui/material": "^7.3.7",

@@ -23,6 +23,9 @@ importers:
 
   apps/library-tools:
     dependencies:
+      '@fast-csv/format':
+        specifier: ^5.0.5
+        version: 5.0.5
       '@mui/icons-material':
         specifier: ^7.3.7
         version: 7.3.7(@mui/material@7.3.7(@emotion/react@11.13.0(@types/react@19.2.8)(react@19.2.3))(@emotion/styled@11.13.0(@emotion/react@11.13.0(@types/react@19.2.8)(react@19.2.3))(@types/react@19.2.8)(react@19.2.3))(@types/react@19.2.8)(react-dom@19.2.3(react@19.2.3))(react@19.2.3))(@types/react@19.2.8)(react@19.2.3)
@@ -35,18 +38,12 @@ importers:
       '@mui/material-nextjs':
         specifier: ^7.3.7
         version: 7.3.7(@emotion/cache@11.14.0)(@emotion/react@11.13.0(@types/react@19.2.8)(react@19.2.3))(@types/react@19.2.8)(next@16.1.3(@opentelemetry/api@1.9.0)(react-dom@19.2.3(react@19.2.3))(react@19.2.3)(sass@1.77.6))(react@19.2.3)
-      '@repo/csv':
-        specifier: workspace:*
-        version: link:../../packages/csv
       '@repo/db':
         specifier: workspace:*
         version: link:../../packages/db
       '@repo/entities':
         specifier: workspace:*
         version: link:../../packages/entities
-      '@repo/generate-barcode-labels':
-        specifier: workspace:*
-        version: link:../../packages/generate-barcode-labels
       '@repo/pdf-renderer':
         specifier: workspace:*
         version: link:../../packages/pdf-renderer
@@ -125,25 +122,6 @@ importers:
         specifier: ^5.9.3
         version: 5.9.3
 
-  packages/csv:
-    dependencies:
-      '@fast-csv/format':
-        specifier: ^5.0.5
-        version: 5.0.5
-      '@repo/db':
-        specifier: workspace:*
-        version: link:../db
-      '@repo/entities':
-        specifier: workspace:*
-        version: link:../entities
-    devDependencies:
-      '@repo/typescript-config':
-        specifier: workspace:*
-        version: link:../typescript-config
-      typescript:
-        specifier: ^5.9.3
-        version: 5.9.3
-
   packages/db:
     dependencies:
       '@repo/entities':
@@ -179,28 +157,6 @@ importers:
         version: 4.0.17(@opentelemetry/api@1.9.0)(@types/node@25.0.9)(sass@1.77.6)(yaml@2.8.2)
 
   packages/entities:
-    devDependencies:
-      '@repo/typescript-config':
-        specifier: workspace:*
-        version: link:../typescript-config
-      typescript:
-        specifier: ^5.9.3
-        version: 5.9.3
-
-  packages/generate-barcode-labels:
-    dependencies:
-      '@repo/db':
-        specifier: workspace:*
-        version: link:../db
-      '@repo/entities':
-        specifier: workspace:*
-        version: link:../entities
-      '@repo/pdf-renderer':
-        specifier: workspace:*
-        version: link:../pdf-renderer
-      '@repo/utils':
-        specifier: workspace:*
-        version: link:../utils
     devDependencies:
       '@repo/typescript-config':
         specifier: workspace:*

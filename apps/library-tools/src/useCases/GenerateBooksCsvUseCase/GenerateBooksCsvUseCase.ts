@@ -2,7 +2,7 @@ import { Db } from '@repo/db/Db';
 import { CsvGenerator } from './CsvGenerator';
 import { Book } from '@repo/entities/Book';
 
-export class GenerateBooksCsv {
+export class GenerateBooksCsvUseCase {
   constructor(
     private db: Db,
     private csvGenerator: CsvGenerator,
