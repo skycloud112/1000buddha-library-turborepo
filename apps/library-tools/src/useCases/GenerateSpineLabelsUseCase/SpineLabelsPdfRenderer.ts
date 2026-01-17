@@ -1,4 +1,4 @@
-import { Label } from './GenerateSpineLabels';
+import { Label } from './GenerateSpineLabelsUseCase';
 import { Avery5160PdfRenderer } from '@repo/pdf-renderer/Avery5160PdfRenderer';
 import { PdfRendererFileReader } from '@repo/pdf-renderer/PdfRenderer';
 

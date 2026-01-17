@@ -19,7 +19,6 @@
     "@mui/material": "^7.3.7",
     "@mui/material-nextjs": "^7.3.7",
     "@repo/pdf-renderer": "workspace:*",
-    "@repo/spine-labels": "workspace:*",
     "@repo/utils": "workspace:*",
     "iron-session": "^8.0.4",
     "next": "16.1.3",

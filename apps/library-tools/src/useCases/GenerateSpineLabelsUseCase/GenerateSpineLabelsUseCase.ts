@@ -13,7 +13,7 @@ export class Label {
   ) {}
 }
 
-export class GenerateSpineLabels {
+export class GenerateSpineLabelsUseCase {
   constructor(
     private db: Db,
     private pdfRenderer: Avery5160PdfRenderer,
