@@ -17,7 +17,6 @@
     "@repo/barcode-generator": "workspace:*"
   },
   "devDependencies": {
-    "@repo/eslint-config": "workspace:*",
     "@repo/typescript-config": "workspace:*",
     "typescript": "^5.3.3"
   }
