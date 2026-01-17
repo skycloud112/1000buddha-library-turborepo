@@ -7,7 +7,6 @@
     "seed": "cross-env TZ=UTC ts-node src/main.ts"
   },
   "dependencies": {
-    "@repo/date-converter-impl": "workspace:*",
     "@repo/db": "workspace:*",
     "@repo/db-impl": "workspace:*",
     "@repo/entities": "workspace:*",

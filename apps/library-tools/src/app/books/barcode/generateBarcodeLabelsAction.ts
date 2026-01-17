@@ -6,7 +6,6 @@ import { GenerateBarcodeLabels } from '@repo/generate-barcode-labels/GenerateBar
 import { EmptyPdfFileReader } from '@repo/pdf-renderer/EmptyPdfFileReader';
 import { DbImpl } from '@repo/db-impl/DbImpl';
 import { getPostgresUrl } from '../../../utils/env.ts';
-import { ISOToDateConverterImpl } from '@repo/date-converter-impl/ISOToDateConverterImpl';
 import { BarcodeGeneratorImpl } from '@repo/barcode-generator-impl/BarcodeGeneratorImpl';
 import { sessionGuard } from '../../../session.ts';
 import { LoggerImpl } from '../../../impls/LoggerImpl.ts';
@@ -18,8 +17,7 @@ export async function generateBarcodeLabelsAction(bookIds: string[]) {
   const pdfRenderer = new BarcodeLabelPdfRenderer(fileReader);
   pdfRenderer.logger = new LoggerImpl();
   const binaryToBase64Converter = new BinaryToBase64ConverterImpl();
-  const isoToDateConverter = new ISOToDateConverterImpl();
-  const db = new DbImpl(getPostgresUrl(), isoToDateConverter);
+  const db = new DbImpl(getPostgresUrl());
   const useCase = new GenerateBarcodeLabels(
     db,
     barcodeGenerator,

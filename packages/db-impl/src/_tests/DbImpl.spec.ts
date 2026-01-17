@@ -2,13 +2,6 @@ import { describe, it, expect, beforeAll, afterEach, afterAll } from 'vitest';
 import { PostgreSqlContainer, StartedPostgreSqlContainer } from '@testcontainers/postgresql';
 import { DbImpl } from '../DbImpl';
 import { Book } from '@repo/entities/Book';
-import { ISOToDateConverter } from '@repo/date-converter/ISOToDateConverter';
-
-class StubISOToDateConverter implements ISOToDateConverter {
-  convert(isoString: string) {
-    return new Date();
-  }
-}
 
 describe('DbImpl', () => {
   let uri: string;
@@ -18,7 +11,7 @@ describe('DbImpl', () => {
   beforeAll(async () => {
     container = await new PostgreSqlContainer('postgres:16').start();
     uri = container!.getConnectionUri();
-    db = new DbImpl(uri, new StubISOToDateConverter());
+    db = new DbImpl(uri);
     await db.initBookTable();
   });
 

@@ -1,7 +1,7 @@
 import { Db } from '@repo/db/Db';
 import { Book } from '@repo/entities/Book';
 import { Pool } from 'pg';
-import { ISOToDateConverter } from '@repo/date-converter/ISOToDateConverter';
+import { isoToDate } from '@repo/utils/isoToDate';
 
 type BookRow = {
   id: string;
@@ -21,10 +21,7 @@ type BookRow = {
 export class DbImpl implements Db {
   private pool!: Pool;
 
-  constructor(
-    private connectionString: string,
-    private isoToDateConverter: ISOToDateConverter,
-  ) {
+  constructor(private connectionString: string) {
     this.pool = new Pool({
       connectionString: this.connectionString,
     });
@@ -191,7 +188,7 @@ export class DbImpl implements Db {
       row.place_of_publication,
       row.publisher,
       row.copy_number,
-      this.isoToDateConverter.convert(row.date_added),
+      isoToDate(row.date_added),
     );
   }
 

@@ -3,12 +3,15 @@
   "version": "0.0.0",
   "private": true,
   "exports": {
-    "./uuid": "./src/uuid.ts"
+    "./uuid": "./src/uuid.ts",
+    "./isoToDate": "./src/isoToDate.ts",
+    "./formatISO9075": "./src/formatISO9075.ts"
   },
   "scripts": {
     "ts": "tsc --noEmit"
   },
   "dependencies": {
+    "date-fns": "^4.1.0",
     "uuid": "^13.0.0"
   },
   "devDependencies": {

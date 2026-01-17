@@ -41,12 +41,6 @@ importers:
       '@repo/csv':
         specifier: workspace:*
         version: link:../../packages/csv
-      '@repo/date-converter-impl':
-        specifier: workspace:*
-        version: link:../../packages/date-converter-impl
-      '@repo/date-util':
-        specifier: workspace:*
-        version: link:../../packages/date-util
       '@repo/db-impl':
         specifier: workspace:*
         version: link:../../packages/db-impl
@@ -108,9 +102,6 @@ importers:
 
   apps/seed:
     dependencies:
-      '@repo/date-converter-impl':
-        specifier: workspace:*
-        version: link:../../packages/date-converter-impl
       '@repo/db':
         specifier: workspace:*
         version: link:../../packages/db
@@ -198,9 +189,6 @@ importers:
 
   packages/book:
     dependencies:
-      '@repo/date-converter':
-        specifier: workspace:*
-        version: link:../date-converter
       '@repo/db':
         specifier: workspace:*
         version: link:../db
@@ -265,44 +253,6 @@ importers:
         specifier: ^5.9.3
         version: 5.9.3
 
-  packages/date-converter:
-    devDependencies:
-      '@repo/typescript-config':
-        specifier: workspace:*
-        version: link:../typescript-config
-      typescript:
-        specifier: ^5.9.3
-        version: 5.9.3
-
-  packages/date-converter-impl:
-    dependencies:
-      '@repo/date-converter':
-        specifier: workspace:*
-        version: link:../date-converter
-      '@repo/date-util':
-        specifier: workspace:*
-        version: link:../date-util
-    devDependencies:
-      '@repo/typescript-config':
-        specifier: workspace:*
-        version: link:../typescript-config
-      typescript:
-        specifier: ^5.9.3
-        version: 5.9.3
-
-  packages/date-util:
-    dependencies:
-      date-fns:
-        specifier: ^4.1.0
-        version: 4.1.0
-    devDependencies:
-      '@repo/typescript-config':
-        specifier: workspace:*
-        version: link:../typescript-config
-      typescript:
-        specifier: ^5.9.3
-        version: 5.9.3
-
   packages/db:
     dependencies:
       '@repo/entities':
@@ -318,15 +268,15 @@ importers:
 
   packages/db-impl:
     dependencies:
-      '@repo/date-converter':
-        specifier: workspace:*
-        version: link:../date-converter
       '@repo/db':
         specifier: workspace:*
         version: link:../db
       '@repo/entities':
         specifier: workspace:*
         version: link:../entities
+      '@repo/utils':
+        specifier: workspace:*
+        version: link:../utils
       pg:
         specifier: ^8.17.1
         version: 8.17.1
@@ -498,6 +448,9 @@ importers:
 
   packages/utils:
     dependencies:
+      date-fns:
+        specifier: ^4.1.0
+        version: 4.1.0
       uuid:
         specifier: ^13.0.0
         version: 13.0.0

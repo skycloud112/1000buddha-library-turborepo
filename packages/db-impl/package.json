@@ -10,9 +10,9 @@
     "test": "TZ=UTC vitest run"
   },
   "dependencies": {
-    "@repo/date-converter": "workspace:*",
     "@repo/db": "workspace:*",
     "@repo/entities": "workspace:*",
+    "@repo/utils": "workspace:*",
     "pg": "^8.17.1"
   },
   "devDependencies": {
