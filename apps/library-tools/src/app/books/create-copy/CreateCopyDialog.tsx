@@ -5,7 +5,7 @@ import IconButton from '@mui/material/IconButton';
 import Close from '@mui/icons-material/Close';
 import Typography from '@mui/material/Typography';
 import List from '@mui/material/List';
-import { BookResponse } from '@repo/book/BookResponse';
+import { BookResponse } from '../../../useCases/BookResponse.ts';
 import { AddBookForm } from '../add-book-form/AddBookForm.tsx';
 import { getInitialValues } from '../book-form/util.ts';
 

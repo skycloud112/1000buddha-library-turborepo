@@ -2,8 +2,8 @@
 
 import { DbImpl } from '@repo/db/DbImpl';
 import { getPostgresUrl } from '../../../../utils/env.ts';
-import { GetBook, GetBookRequest, GetBookResponse } from '@repo/book/GetBook';
-import { ResponseConverterImpl } from '@repo/book/ResponseConverterImpl';
+import { GetBook, GetBookRequest, GetBookResponse } from '../../../../useCases/GetBook.ts';
+import { ResponseConverterImpl } from '../../../../useCases/ResponseConverterImpl.ts';
 
 export async function getBookAction(request: GetBookRequest): Promise<GetBookResponse> {
   const db = new DbImpl(getPostgresUrl());

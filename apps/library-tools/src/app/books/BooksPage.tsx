@@ -12,7 +12,7 @@ import { AddBookIconButton } from './AddBookIconButton.tsx';
 import { getShouldDisableDeleteBooksButton } from './delete-books/buttonUtil.ts';
 import { BooksTable } from './books-table/BooksTable.tsx';
 import { EditBookDialog } from './edit-book/EditBookDialog.tsx';
-import { BookResponse } from '@repo/book/BookResponse';
+import { BookResponse } from '../../useCases/BookResponse.ts';
 import { Search } from './search-books/Search.tsx';
 import { useBooksPage } from './useBooksPage.ts';
 import { getShouldDisableGenerateBarcodeLabelsButton } from './barcode/buttonUtil.ts';

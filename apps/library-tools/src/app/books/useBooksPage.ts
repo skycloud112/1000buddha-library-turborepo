@@ -6,7 +6,7 @@ import { useSearchBooks } from './search-books/useSearchBooks.ts';
 import { useGenerateBarcodeLabels } from './barcode/useGenerateBarcodeLabels.ts';
 import { useEditBookClick } from './edit-book/useEditBookClick.ts';
 import { useAddBookClick } from './add-book/useAddBookClick.ts';
-import { BookResponse } from '@repo/book/BookResponse';
+import { BookResponse } from '../../useCases/BookResponse.ts';
 import { useBooksSelection } from './books-table/useBooksSelection.ts';
 import { useCreateCopyClick } from './create-copy/useCreateCopyClick.ts';
 

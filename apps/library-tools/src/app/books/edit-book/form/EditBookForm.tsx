@@ -9,7 +9,7 @@ import { useEditBookForm } from './useEditBookForm.tsx';
 import { AuthorNumber } from '../../book-form/fields/AuthorNumber.tsx';
 import { YearPublished } from '../../book-form/fields/YearPublished.tsx';
 import { CopyNumber } from '../../book-form/fields/CopyNumber.tsx';
-import { BookResponse } from '@repo/book/BookResponse';
+import { BookResponse } from '../../../../useCases/BookResponse.ts';
 import { Author } from '../../book-form/fields/Author.tsx';
 import { PlaceOfPublication } from '../../book-form/fields/PlaceOfPublication.tsx';
 import { Publisher } from '../../book-form/fields/Publisher.tsx';

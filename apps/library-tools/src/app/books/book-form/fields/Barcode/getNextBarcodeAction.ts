@@ -2,7 +2,10 @@
 
 import { DbImpl } from '@repo/db/DbImpl';
 import { getPostgresUrl } from '../../../../../utils/env.ts';
-import { BarcodeStartChar, GenerateNextBarcode } from '@repo/book/GenerateNextBarcode';
+import {
+  BarcodeStartChar,
+  GenerateNextBarcode,
+} from '../../../../../useCases/GenerateNextBarcode/GenerateNextBarcode.ts';
 
 export const getNextBarcodeAction = async (barcodeStartChar: BarcodeStartChar) => {
   const db = new DbImpl(getPostgresUrl());

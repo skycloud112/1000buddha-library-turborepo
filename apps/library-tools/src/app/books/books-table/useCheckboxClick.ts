@@ -1,4 +1,4 @@
-import { BookResponse } from '@repo/book/BookResponse';
+import { BookResponse } from '../../../useCases/BookResponse.ts';
 import { MouseEvent } from 'react';
 
 export const useCheckboxClick = ({

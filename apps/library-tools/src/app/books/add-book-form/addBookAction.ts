@@ -1,6 +1,6 @@
 'use server';
 
-import { AddBook, AddBookRequest, AddBookResponse } from '@repo/book/AddBook';
+import { AddBook, AddBookRequest, AddBookResponse } from '../../../useCases/AddBook.ts';
 import { DbImpl } from '@repo/db/DbImpl';
 import { getPostgresUrl } from '../../../utils/env.ts';
 import { sessionGuard } from '../../../session.ts';

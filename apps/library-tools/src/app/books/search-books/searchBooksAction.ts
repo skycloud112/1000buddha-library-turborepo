@@ -1,9 +1,9 @@
 'use server';
 
 import { DbImpl } from '@repo/db/DbImpl';
-import { SearchBooks, SearchBooksResponse } from '@repo/book/SearchBooks';
+import { SearchBooks, SearchBooksResponse } from '../../../useCases/SearchBooks.ts';
 import { getPostgresUrl } from '../../../utils/env.ts';
-import { ResponseConverterImpl } from '@repo/book/ResponseConverterImpl';
+import { ResponseConverterImpl } from '../../../useCases/ResponseConverterImpl.ts';
 import { sessionGuard } from '../../../session.ts';
 
 export async function searchBooksAction({

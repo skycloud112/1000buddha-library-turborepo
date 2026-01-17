@@ -1,4 +1,4 @@
-import { BookResponse } from '@repo/book/BookResponse';
+import { BookResponse } from '../../../useCases/BookResponse.ts';
 
 export const getInitialValues = (book: BookResponse) => {
   return {

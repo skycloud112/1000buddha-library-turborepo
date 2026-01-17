@@ -6,7 +6,7 @@ import Close from '@mui/icons-material/Close';
 import Typography from '@mui/material/Typography';
 import { EditBookForm } from './form/EditBookForm.tsx';
 import List from '@mui/material/List';
-import { BookResponse } from '@repo/book/BookResponse';
+import { BookResponse } from '../../../useCases/BookResponse.ts';
 
 export function EditBookDialog({
   open,

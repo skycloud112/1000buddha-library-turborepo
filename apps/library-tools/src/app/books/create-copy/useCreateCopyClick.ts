@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { BookResponse } from '@repo/book/BookResponse';
+import { BookResponse } from '../../../useCases/BookResponse.ts';
 import { getBookAction } from '../edit-book/form/getBookAction.ts';
 
 export const useCreateCopyClick = ({ onError }: { onError: (error: string) => void }) => {

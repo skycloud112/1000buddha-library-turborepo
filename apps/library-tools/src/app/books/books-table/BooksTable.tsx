@@ -2,7 +2,7 @@ import Paper from '@mui/material/Paper';
 import Table from '@mui/material/Table';
 import TableContainer from '@mui/material/TableContainer';
 import Box from '@mui/material/Box';
-import { BookResponse } from '@repo/book/BookResponse';
+import { BookResponse } from '../../../useCases/BookResponse.ts';
 import { BooksTableHead } from './BooksTableHead.tsx';
 import { BooksTableBody } from './BooksTableBody.tsx';
 import { useCheckboxClick } from './useCheckboxClick.ts';

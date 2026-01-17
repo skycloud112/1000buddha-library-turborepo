@@ -3,7 +3,7 @@ import TableCell from '@mui/material/TableCell';
 import TableRow from '@mui/material/TableRow';
 import Checkbox from '@mui/material/Checkbox';
 import { MouseEvent } from 'react';
-import { BookResponse } from '@repo/book/BookResponse';
+import { BookResponse } from '../../../useCases/BookResponse.ts';
 import { ActionsMenu } from '../../../components/ActionsMenu/ActionsMenu.tsx';
 
 export function BooksTableBody({
