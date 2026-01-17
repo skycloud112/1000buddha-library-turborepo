@@ -1,15 +1,15 @@
 import { describe, it, expect, beforeEach } from 'vitest';
-import { GenerateNextBarcode } from '../GenerateNextBarcode';
+import { GenerateNextBarcodeUseCase } from '../GenerateNextBarcodeUseCase';
 import { Db } from '@repo/db/Db';
 import { Book } from '@repo/entities/Book';
 import { B0BookStub } from './B0BookStub';
 import { DbStub } from './DbStub';
 
-describe('GenerateNextBarcode', () => {
-  let generateNextBarcode: GenerateNextBarcode;
+describe('GenerateNextBarcodeUseCase', () => {
+  let generateNextBarcode: GenerateNextBarcodeUseCase;
 
   beforeEach(() => {
-    generateNextBarcode = new GenerateNextBarcode();
+    generateNextBarcode = new GenerateNextBarcodeUseCase();
   });
 
   it('when no books found with the barcode start character, should throw an error', async () => {

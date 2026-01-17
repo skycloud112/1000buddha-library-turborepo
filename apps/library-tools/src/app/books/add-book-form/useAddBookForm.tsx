@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { addBookAction } from './addBookAction.ts';
 import { useForm } from 'react-hook-form';
 import { TBookForm } from '../book-form/TBookForm.ts';
-import { AddBookErrorCode } from '../../../useCases/AddBook.ts';
+import { AddBookErrorCode } from '../../../useCases/AddBookUseCase.ts';
 
 export const useAddBookForm = ({
   onAddBookSuccess,

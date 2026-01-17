@@ -14,7 +14,7 @@ export type UpdateBookRequest = {
   publisher: string;
 };
 
-export class UpdateBook {
+export class UpdateBookUseCase {
   constructor(private db: Db) {}
 
   async execute(request: UpdateBookRequest): Promise<void> {

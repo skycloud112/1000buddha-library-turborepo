@@ -23,7 +23,7 @@ export enum AddBookErrorCode {
   BARCODE_EXISTS = 'BARCODE_EXISTS',
 }
 
-export class AddBook {
+export class AddBookUseCase {
   constructor(private db: Db) {}
 
   async execute(request: AddBookRequest): Promise<AddBookResponse> {

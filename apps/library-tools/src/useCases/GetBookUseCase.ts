@@ -10,7 +10,7 @@ export type GetBookResponse = {
   book: BookResponse;
 };
 
-export class GetBook {
+export class GetBookUseCase {
   constructor(
     private db: Db,
     private responseConverter: ResponseConverter,

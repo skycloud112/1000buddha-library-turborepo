@@ -9,7 +9,7 @@ export type GenerateNextBarcodeResponse = {
   barcode: string;
 };
 
-export class GenerateNextBarcode {
+export class GenerateNextBarcodeUseCase {
   private db!: Db;
 
   public setDb(db: Db) {

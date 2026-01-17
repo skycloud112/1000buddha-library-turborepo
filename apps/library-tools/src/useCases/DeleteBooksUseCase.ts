@@ -1,6 +1,6 @@
 import { Db } from '@repo/db/Db';
 
-export class DeleteBooks {
+export class DeleteBooksUseCase {
   constructor(private db: Db) {}
 
   async execute(bookIds: string[]): Promise<void> {

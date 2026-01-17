@@ -13,7 +13,7 @@ export type SearchBooksResponse = {
   currentPageBooks: BookResponse[];
 };
 
-export class SearchBooks {
+export class SearchBooksUseCase {
   constructor(
     private db: Db,
     private responseConverter: ResponseConverter,

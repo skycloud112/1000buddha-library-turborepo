@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { searchBooksAction } from './searchBooksAction.ts';
 import { BookResponse } from '../../../useCases/BookResponse.ts';
-import { SearchBooksResponse } from '../../../useCases/SearchBooks.ts';
+import { SearchBooksResponse } from '../../../useCases/SearchBooksUseCase.ts';
 import { BookSearchInitialOption } from './InitialOption.ts';
 
 export function useSearchBooks({
