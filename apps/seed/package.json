@@ -7,20 +7,20 @@
     "seed": "cross-env TZ=UTC ts-node src/main.ts"
   },
   "dependencies": {
+    "@repo/date-converter-impl": "workspace:*",
     "@repo/db": "workspace:*",
     "@repo/db-impl": "workspace:*",
     "@repo/entities": "workspace:*",
     "@repo/uuid": "workspace:*",
-    "@repo/uuid-impl": "workspace:*",
-    "@repo/date-converter-impl": "workspace:*"
+    "@repo/uuid-impl": "workspace:*"
   },
   "devDependencies": {
-    "@fast-csv/parse": "^5.0.0",
+    "@fast-csv/parse": "^5.0.5",
     "@repo/typescript-config": "workspace:*",
-    "@types/node": "^20.11.24",
-    "cross-env": "^7.0.3",
-    "dotenv": "^16.4.5",
+    "@types/node": "^25.0.9",
+    "cross-env": "^10.1.0",
+    "dotenv": "^17.2.3",
     "ts-node": "^10.9.2",
-    "typescript": "^5.3.3"
+    "typescript": "^5.9.3"
   }
 }

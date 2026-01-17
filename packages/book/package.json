@@ -18,14 +18,14 @@
     "test": "TZ=UTC vitest run"
   },
   "dependencies": {
-    "@repo/entities": "workspace:*",
+    "@repo/date-converter": "workspace:*",
     "@repo/db": "workspace:*",
-    "@repo/uuid": "workspace:*",
-    "@repo/date-converter": "workspace:*"
+    "@repo/entities": "workspace:*",
+    "@repo/uuid": "workspace:*"
   },
   "devDependencies": {
     "@repo/typescript-config": "workspace:*",
-    "typescript": "^5.3.3",
-    "vitest": "^4.0.16"
+    "typescript": "^5.9.3",
+    "vitest": "^4.0.17"
   }
 }

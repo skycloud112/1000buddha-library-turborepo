@@ -1,3 +1,3 @@
-import MuiStyledEngineProvider from '@mui/material/StyledEngineProvider';
+import { StyledEngineProvider as MuiStyledEngineProvider } from '@mui/material/styles';
 
 export const StyledEngineProvider = MuiStyledEngineProvider;

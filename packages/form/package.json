@@ -9,10 +9,10 @@
     "ts": "tsc --noEmit"
   },
   "dependencies": {
-    "react-hook-form": "7.51.5"
+    "react-hook-form": "7.71.1"
   },
   "devDependencies": {
     "@repo/typescript-config": "workspace:*",
-    "typescript": "^5.3.3"
+    "typescript": "^5.9.3"
   }
 }

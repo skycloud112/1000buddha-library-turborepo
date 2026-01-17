@@ -1,4 +1,4 @@
-import MuiSwitch, { SwitchProps } from '@mui/material/Switch/Switch';
+import MuiSwitch, { SwitchProps } from '@mui/material/Switch';
 
 type Props = SwitchProps;
 

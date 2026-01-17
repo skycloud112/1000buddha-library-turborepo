@@ -16,7 +16,7 @@ describe('DbImpl', () => {
   let container: StartedPostgreSqlContainer;
 
   beforeAll(async () => {
-    container = await new PostgreSqlContainer().start();
+    container = await new PostgreSqlContainer('postgres:16').start();
     uri = container!.getConnectionUri();
     db = new DbImpl(uri, new StubISOToDateConverter());
     await db.initBookTable();

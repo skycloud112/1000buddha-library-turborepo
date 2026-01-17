@@ -3,14 +3,13 @@
   "version": "0.0.0",
   "private": true,
   "exports": {
-   ".": "./src/index.ts"
+    ".": "./src/index.ts"
   },
   "scripts": {
     "ts": "tsc --noEmit"
   },
-  "dependencies": {},
   "devDependencies": {
     "@repo/typescript-config": "workspace:*",
-    "typescript": "^5.3.3"
+    "typescript": "^5.9.3"
   }
 }

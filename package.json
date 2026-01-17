@@ -12,9 +12,9 @@
   },
   "devDependencies": {
     "@repo/typescript-config": "workspace:*",
-    "prettier": "^3.7.4",
-    "turbo": "2.2.3",
-    "vitest": "^4.0.16"
+    "prettier": "^3.8.0",
+    "turbo": "2.7.4",
+    "vitest": "^4.0.17"
   },
   "packageManager": "pnpm@9.12.2",
   "engines": {

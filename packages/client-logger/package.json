@@ -10,11 +10,11 @@
     "ts": "tsc --noEmit"
   },
   "dependencies": {
-    "@datadog/browser-logs": "^5.28.1",
-    "@datadog/browser-rum": "^5.28.1"
+    "@datadog/browser-logs": "^6.25.4",
+    "@datadog/browser-rum": "^6.25.4"
   },
   "devDependencies": {
     "@repo/typescript-config": "workspace:*",
-    "typescript": "^5.3.3"
+    "typescript": "^5.9.3"
   }
 }

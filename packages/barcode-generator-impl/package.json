@@ -10,11 +10,11 @@
   },
   "dependencies": {
     "@repo/barcode-generator": "workspace:*",
-    "bwip-js": "^4.5.1"
+    "bwip-js": "^4.8.0"
   },
   "devDependencies": {
     "@repo/typescript-config": "workspace:*",
-    "typescript": "^5.3.3",
-    "@types/bwip-js": "^3.2.3"
+    "@types/bwip-js": "^3.2.3",
+    "typescript": "^5.9.3"
   }
 }
