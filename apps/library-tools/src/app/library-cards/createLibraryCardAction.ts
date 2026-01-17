@@ -1,8 +1,8 @@
 'use server';
 
-import { GenerateLibraryCard } from '@repo/library-card/GenerateLibraryCard';
-import { LibraryCardPdfRendererFileReader } from '@repo/library-card/LibraryCardPdfRendererFileReader';
-import { LibraryCardPdfRenderer } from '@repo/library-card/LibraryCardPdfRenderer';
+import { GenerateLibraryCardUseCase } from '../../useCases/GenerateLibraryCardUseCase/GenerateLibraryCardUseCase.ts';
+import { LibraryCardPdfRendererFileReader } from '../../useCases/GenerateLibraryCardUseCase/LibraryCardPdfRendererFileReader.ts';
+import { LibraryCardPdfRenderer } from '../../useCases/GenerateLibraryCardUseCase/LibraryCardPdfRenderer.ts';
 import { sessionGuard } from '../../session.ts';
 
 export const createLibraryCardAction = async ({
@@ -15,6 +15,6 @@ export const createLibraryCardAction = async ({
   await sessionGuard();
   const fileReader = new LibraryCardPdfRendererFileReader();
   const pdfRenderer = new LibraryCardPdfRenderer(fileReader);
-  const generateLibraryCard = new GenerateLibraryCard(pdfRenderer);
-  return generateLibraryCard.generate({ name, barcode });
+  const useCase = new GenerateLibraryCardUseCase(pdfRenderer);
+  return useCase.generate({ name, barcode });
 };

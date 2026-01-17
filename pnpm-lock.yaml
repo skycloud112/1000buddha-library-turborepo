@@ -47,9 +47,6 @@ importers:
       '@repo/generate-barcode-labels':
         specifier: workspace:*
         version: link:../../packages/generate-barcode-labels
-      '@repo/library-card':
-        specifier: workspace:*
-        version: link:../../packages/library-card
       '@repo/pdf-renderer':
         specifier: workspace:*
         version: link:../../packages/pdf-renderer
@@ -211,25 +208,6 @@ importers:
       '@repo/typescript-config':
         specifier: workspace:*
         version: link:../typescript-config
-      typescript:
-        specifier: ^5.9.3
-        version: 5.9.3
-
-  packages/library-card:
-    dependencies:
-      '@repo/pdf-renderer':
-        specifier: workspace:*
-        version: link:../pdf-renderer
-      '@repo/utils':
-        specifier: workspace:*
-        version: link:../utils
-    devDependencies:
-      '@repo/typescript-config':
-        specifier: workspace:*
-        version: link:../typescript-config
-      '@types/node':
-        specifier: ^25.0.9
-        version: 25.0.9
       typescript:
         specifier: ^5.9.3
         version: 5.9.3

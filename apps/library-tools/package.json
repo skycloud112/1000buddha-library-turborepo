@@ -14,7 +14,6 @@
     "@repo/db": "workspace:*",
     "@repo/entities": "workspace:*",
     "@repo/generate-barcode-labels": "workspace:*",
-    "@repo/library-card": "workspace:*",
     "@mui/icons-material": "^7.3.7",
     "@mui/lab": "7.0.1-beta.21",
     "@mui/material": "^7.3.7",

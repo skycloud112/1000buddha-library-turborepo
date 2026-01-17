@@ -14,7 +14,7 @@ export type GenerateLibraryCardRequest = {
   barcode: string;
 };
 
-export class GenerateLibraryCard {
+export class GenerateLibraryCardUseCase {
   constructor(private pdfRenderer: LibraryCardPdfRenderer) {}
 
   async generate(request: GenerateLibraryCardRequest): Promise<string> {
