@@ -32,6 +32,7 @@ export class DbImpl implements Db {
   }
 
   async initBookTable() {
+    await this.pool.query('DROP TABLE IF EXISTS "Book" CASCADE');
     await this.pool.query(
       'CREATE TABLE "Book" (\n' +
         '    title text NOT NULL,\n' +

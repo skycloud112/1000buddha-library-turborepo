@@ -1,27 +1,22 @@
-import { describe, it, expect, beforeAll, afterEach, afterAll } from 'vitest';
-import { PostgreSqlContainer, StartedPostgreSqlContainer } from '@testcontainers/postgresql';
+import { describe, it, expect, beforeAll, beforeEach, afterAll } from 'vitest';
 import { DbImpl } from '../DbImpl';
 import { Book } from '@repo/entities/Book';
+import { TEST_DB_CONNECTION_STRING } from '../TEST_DB_CONNECTION_STRING';
 
 describe('DbImpl', () => {
-  let uri: string;
   let db: DbImpl;
-  let container: StartedPostgreSqlContainer;
 
   beforeAll(async () => {
-    container = await new PostgreSqlContainer('postgres:16').start();
-    uri = container!.getConnectionUri();
-    db = new DbImpl(uri);
+    db = new DbImpl(TEST_DB_CONNECTION_STRING);
     await db.initBookTable();
   });
 
-  afterEach(async () => {
+  beforeEach(async () => {
     await db.deleteAllBooks();
   });
 
   afterAll(async () => {
     await db.disconnect();
-    await container!.stop();
   });
 
   it('there a book, should return the book', async () => {
