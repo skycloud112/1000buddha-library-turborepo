@@ -1,6 +1,5 @@
 'use server';
 
-import { BinaryToBase64ConverterImpl } from '@repo/binary-to-base64-impl/BinaryToBase64ConverterImpl';
 import { BarcodeLabelPdfRenderer } from '@repo/generate-barcode-labels/BarcodeLabelPdfRenderer';
 import { GenerateBarcodeLabels } from '@repo/generate-barcode-labels/GenerateBarcodeLabels';
 import { EmptyPdfFileReader } from '@repo/pdf-renderer/EmptyPdfFileReader';
@@ -16,13 +15,7 @@ export async function generateBarcodeLabelsAction(bookIds: string[]) {
   const barcodeGenerator = new BarcodeGeneratorImpl();
   const pdfRenderer = new BarcodeLabelPdfRenderer(fileReader);
   pdfRenderer.logger = new LoggerImpl();
-  const binaryToBase64Converter = new BinaryToBase64ConverterImpl();
   const db = new DbImpl(getPostgresUrl());
-  const useCase = new GenerateBarcodeLabels(
-    db,
-    barcodeGenerator,
-    pdfRenderer,
-    binaryToBase64Converter,
-  );
+  const useCase = new GenerateBarcodeLabels(db, barcodeGenerator, pdfRenderer);
   return useCase.execute(bookIds);
 }

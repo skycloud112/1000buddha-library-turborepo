@@ -1,4 +1,4 @@
-import { BinaryToBase64Converter } from '@repo/binary-to-base64/BinaryToBase64Converter';
+import { binaryToBase64 } from '@repo/utils/binaryToBase64';
 
 export type LibraryCardPdfRenderer = {
   createPdf(params: {
@@ -21,7 +21,6 @@ export class GenerateLibraryCard {
   constructor(
     private barcodeGenerator: BarCodeGenerator,
     private pdfRenderer: LibraryCardPdfRenderer,
-    private binaryToBase64Converter: BinaryToBase64Converter,
   ) {}
 
   async generate(request: GenerateLibraryCardRequest): Promise<string> {
@@ -31,6 +30,6 @@ export class GenerateLibraryCard {
       barcodeImage,
       barcode: request.barcode,
     });
-    return this.binaryToBase64Converter.convert(pdfBytes);
+    return binaryToBase64(pdfBytes);
   }
 }

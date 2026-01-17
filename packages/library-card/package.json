@@ -11,8 +11,8 @@
     "ts": "tsc --noEmit"
   },
   "dependencies": {
-    "@repo/binary-to-base64": "workspace:*",
-    "@repo/pdf-renderer": "workspace:*"
+    "@repo/pdf-renderer": "workspace:*",
+    "@repo/utils": "workspace:*"
   },
   "devDependencies": {
     "@repo/typescript-config": "workspace:*",

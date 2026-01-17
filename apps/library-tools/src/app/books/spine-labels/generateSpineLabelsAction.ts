@@ -4,7 +4,6 @@ import { DbImpl } from '@repo/db/DbImpl';
 import { getPostgresUrl } from '../../../utils/env.ts';
 import { GenerateSpineLabels } from '@repo/spine-labels/GenerateSpineLabels';
 import { SpineLabelsPdfRenderer } from '@repo/spine-labels/SpineLabelsPdfRenderer';
-import { BinaryToBase64ConverterImpl } from '@repo/binary-to-base64-impl/BinaryToBase64ConverterImpl';
 import { EmptyPdfFileReader } from '@repo/pdf-renderer/EmptyPdfFileReader';
 import { sessionGuard } from '../../../session.ts';
 import { LoggerImpl } from '../../../impls/LoggerImpl.ts';
@@ -15,7 +14,6 @@ export async function generateSpineLabelsAction(barcodes: string[]) {
   const fileReader = new EmptyPdfFileReader();
   const pdfDrawer = new SpineLabelsPdfRenderer(fileReader);
   pdfDrawer.logger = new LoggerImpl();
-  const binaryToBase64Converter = new BinaryToBase64ConverterImpl();
-  const useCase = new GenerateSpineLabels(db, pdfDrawer, binaryToBase64Converter);
+  const useCase = new GenerateSpineLabels(db, pdfDrawer);
   return useCase.execute(barcodes);
 }

@@ -1,7 +1,7 @@
 import { Db } from '@repo/db/Db';
 import { Book } from '@repo/entities/Book';
-import { BinaryToBase64Converter } from '@repo/binary-to-base64/BinaryToBase64Converter';
 import { Avery5160PdfRenderer } from '@repo/pdf-renderer/Avery5160PdfRenderer';
+import { binaryToBase64 } from '@repo/utils/binaryToBase64';
 
 export class Label {
   constructor(
@@ -17,14 +17,13 @@ export class GenerateSpineLabels {
   constructor(
     private db: Db,
     private pdfRenderer: Avery5160PdfRenderer,
-    private binaryToBase64Converter: BinaryToBase64Converter,
   ) {}
 
   async execute(bookIds: string[]) {
     const books: Book[] = await this.db.getBooks(bookIds);
     const labels: Label[] = this.convertBooksToLabels(books);
     const pdfBytes = await this.pdfRenderer.runDrawLabels(labels);
-    return this.binaryToBase64Converter.convert(pdfBytes);
+    return binaryToBase64(pdfBytes);
   }
 
   private convertBooksToLabels(books: Book[]) {

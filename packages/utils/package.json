@@ -6,7 +6,8 @@
     "./uuid": "./src/uuid.ts",
     "./isoToDate": "./src/isoToDate.ts",
     "./formatISO9075": "./src/formatISO9075.ts",
-    "./averyLabels": "./src/averyLabels.ts"
+    "./averyLabels": "./src/averyLabels.ts",
+    "./binaryToBase64": "./src/binaryToBase64.ts"
   },
   "scripts": {
     "ts": "tsc --noEmit"

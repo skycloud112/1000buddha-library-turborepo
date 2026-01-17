@@ -1,8 +1,8 @@
-import { BinaryToBase64Converter } from '@repo/binary-to-base64/BinaryToBase64Converter';
 import { Book } from '@repo/entities/Book';
 import { Db } from '@repo/db/Db';
 import { Avery5160PdfRenderer } from '@repo/pdf-renderer/Avery5160PdfRenderer';
 import { BarcodeGenerator } from '@repo/barcode-generator/BarcodeGenerator';
+import { binaryToBase64 } from '@repo/utils/binaryToBase64';
 
 export type Label = {
   chineseHeaderText: string;
@@ -15,7 +15,6 @@ export class GenerateBarcodeLabels {
     private db: Db,
     private barcodeGenerator: BarcodeGenerator,
     private pdfRenderer: Avery5160PdfRenderer,
-    private binaryToBase64Converter: BinaryToBase64Converter,
   ) {}
 
   async execute(bookIds: string[]) {
@@ -26,7 +25,7 @@ export class GenerateBarcodeLabels {
     }
     const labels = await this.createLabels(barcodes);
     const pdfBinary = await this.pdfRenderer.runDrawLabels(labels);
-    return this.binaryToBase64Converter.convert(pdfBinary);
+    return binaryToBase64(pdfBinary);
   }
 
   async createLabels(barcodes: string[]) {

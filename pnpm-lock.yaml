@@ -38,9 +38,6 @@ importers:
       '@repo/barcode-generator-impl':
         specifier: workspace:*
         version: link:../../packages/barcode-generator-impl
-      '@repo/binary-to-base64-impl':
-        specifier: workspace:*
-        version: link:../../packages/binary-to-base64-impl
       '@repo/book':
         specifier: workspace:*
         version: link:../../packages/book
@@ -168,28 +165,6 @@ importers:
         specifier: ^5.9.3
         version: 5.9.3
 
-  packages/binary-to-base64:
-    devDependencies:
-      '@repo/typescript-config':
-        specifier: workspace:*
-        version: link:../typescript-config
-      typescript:
-        specifier: ^5.9.3
-        version: 5.9.3
-
-  packages/binary-to-base64-impl:
-    dependencies:
-      '@repo/binary-to-base64':
-        specifier: workspace:*
-        version: link:../binary-to-base64
-    devDependencies:
-      '@repo/typescript-config':
-        specifier: workspace:*
-        version: link:../typescript-config
-      typescript:
-        specifier: ^5.9.3
-        version: 5.9.3
-
   packages/book:
     dependencies:
       '@repo/db':
@@ -279,9 +254,6 @@ importers:
       '@repo/barcode-generator':
         specifier: workspace:*
         version: link:../barcode-generator
-      '@repo/binary-to-base64':
-        specifier: workspace:*
-        version: link:../binary-to-base64
       '@repo/db':
         specifier: workspace:*
         version: link:../db
@@ -291,6 +263,9 @@ importers:
       '@repo/pdf-renderer':
         specifier: workspace:*
         version: link:../pdf-renderer
+      '@repo/utils':
+        specifier: workspace:*
+        version: link:../utils
     devDependencies:
       '@repo/typescript-config':
         specifier: workspace:*
@@ -301,12 +276,12 @@ importers:
 
   packages/library-card:
     dependencies:
-      '@repo/binary-to-base64':
-        specifier: workspace:*
-        version: link:../binary-to-base64
       '@repo/pdf-renderer':
         specifier: workspace:*
         version: link:../pdf-renderer
+      '@repo/utils':
+        specifier: workspace:*
+        version: link:../utils
     devDependencies:
       '@repo/typescript-config':
         specifier: workspace:*
@@ -339,9 +314,6 @@ importers:
 
   packages/spine-labels:
     dependencies:
-      '@repo/binary-to-base64':
-        specifier: workspace:*
-        version: link:../binary-to-base64
       '@repo/db':
         specifier: workspace:*
         version: link:../db
@@ -351,6 +323,9 @@ importers:
       '@repo/pdf-renderer':
         specifier: workspace:*
         version: link:../pdf-renderer
+      '@repo/utils':
+        specifier: workspace:*
+        version: link:../utils
     devDependencies:
       '@repo/typescript-config':
         specifier: workspace:*
