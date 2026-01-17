@@ -6,7 +6,7 @@
     "./ISOToDateConverter": "./src/ISOToDateConverter.ts"
   },
   "scripts": {
-    "ts:check": "tsc --noEmit"
+    "ts": "tsc --noEmit"
   },
   "dependencies": {
 

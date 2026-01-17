@@ -14,8 +14,8 @@
     "./GenerateNextBarcode": "./src/GenerateNextBarcode/GenerateNextBarcode.ts"
   },
   "scripts": {
-    "ts:check": "tsc --noEmit",
-    "test": "jest"
+    "ts": "tsc --noEmit",
+    "test": "TZ=UTC vitest run"
   },
   "dependencies": {
     "@repo/entities": "workspace:*",
@@ -26,6 +26,6 @@
   "devDependencies": {
     "@repo/typescript-config": "workspace:*",
     "typescript": "^5.3.3",
-    "@repo/jest-config": "workspace:*"
+    "vitest": "^4.0.16"
   }
 }

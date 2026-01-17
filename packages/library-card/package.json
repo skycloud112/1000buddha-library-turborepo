@@ -8,7 +8,7 @@
     "./GenerateLibraryCard": "./src/GenerateLibraryCard.ts"
   },
   "scripts": {
-    "ts:check": "tsc --noEmit"
+    "ts": "tsc --noEmit"
   },
   "dependencies": {
     "@repo/binary-to-base64": "workspace:*",

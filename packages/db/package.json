@@ -6,7 +6,7 @@
     "./Db": "./src/Db.ts"
   },
   "scripts": {
-    "ts:check": "tsc --noEmit"
+    "ts": "tsc --noEmit"
   },
   "dependencies": {
     "@repo/entities": "workspace:*"

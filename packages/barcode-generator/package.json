@@ -6,7 +6,7 @@
     "./BarcodeGenerator": "./src/BarcodeGenerator.ts"
   },
   "scripts": {
-    "ts:check": "tsc --noEmit"
+    "ts": "tsc --noEmit"
   },
   "dependencies": {
   },

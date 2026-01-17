@@ -1,4 +1,4 @@
-import { describe, it, expect, beforeEach } from '@jest/globals';
+import { describe, it, expect, beforeEach } from 'vitest';
 import { Middleware } from '../Middleware.ts';
 import { NextResponseUtilsSpy } from './NextResponseUtilsSpy.ts';
 import { UnauthenticatedSessionHandlerStub } from './UnauthenticatedSessionHandlerStub.ts';

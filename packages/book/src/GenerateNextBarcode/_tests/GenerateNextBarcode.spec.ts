@@ -1,4 +1,4 @@
-import { describe, it, expect, beforeEach } from '@jest/globals';
+import { describe, it, expect, beforeEach } from 'vitest';
 import { GenerateNextBarcode } from '../GenerateNextBarcode';
 import { Db } from '@repo/db/Db';
 import { Book } from '@repo/entities/Book';

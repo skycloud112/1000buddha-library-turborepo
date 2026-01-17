@@ -6,7 +6,7 @@
     "./BarcodeGeneratorImpl": "./src/BarcodeGeneratorImpl.ts"
   },
   "scripts": {
-    "ts:check": "tsc --noEmit"
+    "ts": "tsc --noEmit"
   },
   "dependencies": {
     "@repo/barcode-generator": "workspace:*",

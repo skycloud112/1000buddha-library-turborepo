@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "ts:check": "tsc --noEmit",
+    "ts": "tsc --noEmit",
     "seed": "cross-env TZ=UTC ts-node src/main.ts"
   },
   "dependencies": {

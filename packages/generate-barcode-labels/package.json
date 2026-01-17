@@ -7,7 +7,7 @@
     "./GenerateBarcodeLabels": "./src/GenerateBarcodeLabels.ts"
   },
   "scripts": {
-    "ts:check": "tsc --noEmit"
+    "ts": "tsc --noEmit"
   },
   "dependencies": {
     "@repo/pdf-renderer": "workspace:*",

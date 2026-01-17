@@ -7,8 +7,8 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "ts:check": "tsc --noEmit",
-    "test": "jest"
+    "ts": "tsc --noEmit",
+    "test": "TZ=UTC vitest run"
   },
   "dependencies": {
     "@repo/barcode-generator-impl": "workspace:*",
@@ -34,13 +34,13 @@
     "react-dom": "19.0.0-rc-69d4b800-20241021"
   },
   "devDependencies": {
-    "@repo/jest-config": "workspace:*",
     "@repo/typescript-config": "workspace:*",
     "@types/node": "^20.11.24",
     "@types/react": "npm:types-react@19.0.0-rc.1",
     "@types/react-dom": "npm:types-react-dom@19.0.0-rc.1",
     "cross-env": "^7.0.3",
-    "typescript": "^5.3.3"
+    "typescript": "^5.3.3",
+    "vitest": "^4.0.16"
   },
   "pnpm": {
     "overrides": {

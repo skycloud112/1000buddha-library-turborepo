@@ -1,9 +1,6 @@
 {
   "$schema": "https://turbo.build/schema.json",
-  "globalDependencies": [
-    "**/.env.*local",
-    ".env"
-  ],
+  "globalDependencies": ["**/.env.*local", ".env"],
   "globalEnv": [
     "NODE_ENV",
     "POSTGRES_URL",
@@ -16,28 +13,17 @@
       "persistent": true
     },
     "build": {
-      "dependsOn": [
-        "^build"
-      ],
-      "outputs": [
-        ".next/**",
-        "!.next/cache/**"
-      ]
+      "dependsOn": ["^build"],
+      "outputs": [".next/**", "!.next/cache/**"]
     },
     "lint": {
-      "dependsOn": [
-        "^lint"
-      ]
+      "dependsOn": ["^lint"]
     },
-    "ts:check": {
-      "dependsOn": [
-        "^ts:check"
-      ]
+    "ts": {
+      "dependsOn": ["^ts"]
     },
     "test": {
-      "dependsOn": [
-        "^test"
-      ]
+      "dependsOn": ["^test"]
     }
   }
 }

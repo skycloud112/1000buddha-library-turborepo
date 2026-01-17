@@ -7,7 +7,7 @@
     "./SpineLabelsPdfRenderer": "./src/SpineLabelsPdfRenderer.ts"
   },
   "scripts": {
-    "ts:check": "tsc --noEmit"
+    "ts": "tsc --noEmit"
   },
   "dependencies": {
     "@repo/db": "workspace:*",

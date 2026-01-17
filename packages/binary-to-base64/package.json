@@ -6,7 +6,7 @@
     "./BinaryToBase64Converter": "./src/BinaryToBase64Converter.ts"
   },
   "scripts": {
-    "ts:check": "tsc --noEmit"
+    "ts": "tsc --noEmit"
   },
   "dependencies": {},
   "devDependencies": {

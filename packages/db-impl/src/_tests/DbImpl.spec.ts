@@ -1,4 +1,4 @@
-import { describe, it, expect, beforeAll, afterEach, afterAll } from '@jest/globals';
+import { describe, it, expect, beforeAll, afterEach, afterAll } from 'vitest';
 import { PostgreSqlContainer, StartedPostgreSqlContainer } from '@testcontainers/postgresql';
 import { DbImpl } from '../DbImpl';
 import { Book } from '@repo/entities/Book';

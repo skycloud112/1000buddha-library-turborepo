@@ -5,7 +5,7 @@ export interface CookieGenerator {
 export type Notification = 'INCORRECT_PASSWORD';
 
 export interface LoginResponse {
-  notification: Notification | null;
+  notification?: Notification;
 }
 
 export class LoginInteractor {
@@ -28,8 +28,6 @@ export class LoginInteractor {
     }
 
     await this.cookieGenerator.generate();
-    return {
-      notification: null,
-    };
+    return {};
   }
 }

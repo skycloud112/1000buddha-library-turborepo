@@ -6,7 +6,7 @@
     "./UUIDGenerator": "./src/UUIDGenerator.ts"
   },
   "scripts": {
-    "ts:check": "tsc --noEmit"
+    "ts": "tsc --noEmit"
   },
   "dependencies": {},
   "devDependencies": {

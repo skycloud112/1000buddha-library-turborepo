@@ -6,8 +6,8 @@
     "./DbImpl": "./src/DbImpl.ts"
   },
   "scripts": {
-    "ts:check": "tsc --noEmit",
-    "test": "jest"
+    "ts": "tsc --noEmit",
+    "test": "TZ=UTC vitest run"
   },
   "dependencies": {
     "@repo/date-converter": "workspace:*",
@@ -22,6 +22,6 @@
     "@types/pg": "^8.11.10",
     "ts-node": "^10.9.2",
     "typescript": "^5.3.3",
-    "@repo/jest-config": "workspace:*"
+    "vitest": "^4.0.16"
   }
 }

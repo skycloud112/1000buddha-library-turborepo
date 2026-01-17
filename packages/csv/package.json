@@ -8,7 +8,7 @@
     "./CsvGeneratorImpl": "./src/CsvGeneratorImpl.ts"
   },
   "scripts": {
-    "ts:check": "tsc --noEmit"
+    "ts": "tsc --noEmit"
   },
   "dependencies": {
     "@fast-csv/format": "^5.0.0",

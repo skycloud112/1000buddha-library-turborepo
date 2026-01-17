@@ -6,11 +6,9 @@
     "./Book": "./src/Book.ts"
   },
   "scripts": {
-    "ts:check": "tsc --noEmit"
+    "ts": "tsc --noEmit"
   },
-  "dependencies": {
-
-  },
+  "dependencies": {},
   "devDependencies": {
     "@repo/typescript-config": "workspace:*",
     "typescript": "^5.3.3"

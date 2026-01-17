@@ -54,7 +54,7 @@
     "./labThemeAugmentation": "./src/labThemeAugmentation.ts"
   },
   "scripts": {
-    "ts:check": "tsc --noEmit"
+    "ts": "tsc --noEmit"
   },
   "dependencies": {
     "@mui/icons-material": "^6.1.1",

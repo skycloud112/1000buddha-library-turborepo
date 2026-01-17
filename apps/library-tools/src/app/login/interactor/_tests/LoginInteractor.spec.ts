@@ -1,4 +1,4 @@
-import { describe, it, expect, beforeEach } from '@jest/globals';
+import { describe, it, expect, beforeEach } from 'vitest';
 import { CookieGenerator, LoginInteractor } from '../LoginInteractor.ts';
 
 export class CookieGeneratorSpy implements CookieGenerator {
