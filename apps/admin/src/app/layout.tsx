@@ -1,4 +1,5 @@
 import CssBaseline from '@mui/material/CssBaseline';
+import { Analytics } from '@vercel/analytics/react';
 import { MuiProvider } from '../components/MuiProvider.tsx';
 import { ReactQueryProvider } from '../components/ReactQueryProvider.tsx';
 
@@ -26,6 +27,7 @@ export default function RootLayout({
             {children}
           </MuiProvider>
         </ReactQueryProvider>
+        <Analytics />
       </body>
     </html>
   );
