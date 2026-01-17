@@ -1,5 +1,6 @@
 import CssBaseline from '@mui/material/CssBaseline';
 import { MuiProvider } from '../components/MuiProvider.tsx';
+import { ReactQueryProvider } from '../components/ReactQueryProvider.tsx';
 
 export default function RootLayout({
   children,
@@ -19,10 +20,12 @@ export default function RootLayout({
         <title>1000 Buddha Library Tools</title>
       </head>
       <body>
-        <MuiProvider>
-          <CssBaseline />
-          {children}
-        </MuiProvider>
+        <ReactQueryProvider>
+          <MuiProvider>
+            <CssBaseline />
+            {children}
+          </MuiProvider>
+        </ReactQueryProvider>
       </body>
     </html>
   );
