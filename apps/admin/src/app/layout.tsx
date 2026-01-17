@@ -18,9 +18,11 @@ export default function RootLayout({
         />
         <title>1000 Buddha Library Tools</title>
       </head>
-      <CssBaseline />
       <body>
-        <MuiProvider>{children}</MuiProvider>
+        <MuiProvider>
+          <CssBaseline />
+          {children}
+        </MuiProvider>
       </body>
     </html>
   );
