@@ -3,7 +3,6 @@ import { addBookAction } from './addBookAction.ts';
 import { useForm } from '@repo/form/rhf';
 import { TBookForm } from '../book-form/TBookForm.ts';
 import { AddBookErrorCode } from '@repo/book/AddBook';
-import { logError } from '@repo/client-logger/log';
 
 export const useAddBookForm = ({
   onAddBookSuccess,
@@ -32,7 +31,7 @@ export const useAddBookForm = ({
 
     try {
       await handleSubmit(handleValid)();
-    } catch (e) {
+    } catch {
       handleError();
     }
   };
@@ -56,8 +55,7 @@ export const useAddBookForm = ({
         return;
       }
       handleSuccess();
-    } catch (e) {
-      logError({ message: 'add book action failed', error: e as Error });
+    } catch {
       handleError();
     }
   }

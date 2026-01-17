@@ -1,7 +1,6 @@
 import { useState } from 'react';
 import { generateBooksCsvAction } from './generateBooksCsvAction.ts';
 import { createCsvBlob, downloadBlob } from './csvUtil.ts';
-import { logError } from '@repo/client-logger/log';
 
 export function useGenerateBooksCsv({
   onError,
@@ -19,8 +18,7 @@ export function useGenerateBooksCsv({
       const blob = createCsvBlob(csvString);
       downloadBlob(blob, 'books.csv');
       handleSuccess();
-    } catch (e) {
-      logError({ message: 'generate books csv action failed', error: e as Error });
+    } catch {
       handleError();
     }
   };

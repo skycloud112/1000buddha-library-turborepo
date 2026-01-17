@@ -1,7 +1,6 @@
 import { generateSpineLabelsAction } from './generateSpineLabelsAction.ts';
 import { base64ToPdfObjectUrl } from '../../../utils/convertUtil.ts';
 import { useState } from 'react';
-import { logError } from '@repo/client-logger/log';
 
 export function useGenerateSpineLabels({
   onError,
@@ -19,8 +18,7 @@ export function useGenerateSpineLabels({
       const url = base64ToPdfObjectUrl(base64);
       window.open(url);
       handleSuccess();
-    } catch (e) {
-      logError({ message: 'generate spine labels action failed', error: e as Error });
+    } catch {
       handleError();
     }
   };

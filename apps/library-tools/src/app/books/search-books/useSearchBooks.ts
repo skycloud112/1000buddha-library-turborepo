@@ -1,7 +1,6 @@
 import { useState } from 'react';
 import { searchBooksAction } from './searchBooksAction.ts';
 import { BookResponse } from '@repo/book/BookResponse';
-import { logError } from '@repo/client-logger/log';
 import { SearchBooksResponse } from '@repo/book/SearchBooks';
 import { BookSearchInitialOption } from './InitialOption.ts';
 
@@ -38,8 +37,7 @@ export function useSearchBooks({
         pageSize,
       });
       handleSearchClickSuccess(response);
-    } catch (e) {
-      logError({ message: 'handleSearchClick failed', error: e as Error });
+    } catch {
       handleSearchClickError();
     }
   };
@@ -69,8 +67,7 @@ export function useSearchBooks({
       setIsLoading(true);
       const response = await searchBooksAction({ searchTerm, page, pageSize });
       handleSearchSuccess(response);
-    } catch (e) {
-      logError({ message: 'search failed', error: e as Error });
+    } catch {
       handleSearchError();
     }
   };

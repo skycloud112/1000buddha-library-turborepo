@@ -1,5 +1,4 @@
 import CssBaseline from '@mui/material/CssBaseline';
-import { DatadogInit } from '../components/DatadogInit.tsx';
 import { MuiProvider } from '../components/MuiProvider.tsx';
 
 export default function RootLayout({
@@ -19,7 +18,6 @@ export default function RootLayout({
         />
         <title>1000 Buddha Library Tools</title>
       </head>
-      <DatadogInit />
       <CssBaseline />
       <body>
         <MuiProvider>{children}</MuiProvider>

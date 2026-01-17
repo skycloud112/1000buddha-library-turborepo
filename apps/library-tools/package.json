@@ -13,7 +13,6 @@
     "@repo/barcode-generator-impl": "workspace:*",
     "@repo/binary-to-base64-impl": "workspace:*",
     "@repo/book": "workspace:*",
-    "@repo/client-logger": "workspace:*",
     "@repo/constants": "workspace:*",
     "@repo/csv": "workspace:*",
     "@repo/db-impl": "workspace:*",

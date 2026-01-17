@@ -8,7 +8,6 @@ import { useState } from 'react';
 import Alert from '@mui/material/Alert';
 import { createLibraryCardAction } from './createLibraryCardAction.ts';
 import { base64ToPdfObjectUrl } from '../../utils/convertUtil.ts';
-import { logError } from '@repo/client-logger/log';
 
 export const LibraryCardsPage = () => {
   const [name, setName] = useState('阿彌陀佛');
@@ -24,8 +23,7 @@ export const LibraryCardsPage = () => {
       const url = base64ToPdfObjectUrl(base64);
       window.open(url);
       handleSuccess();
-    } catch (e) {
-      logError({ message: 'create library card action failed', error: e as Error });
+    } catch {
       handleError();
     }
   };

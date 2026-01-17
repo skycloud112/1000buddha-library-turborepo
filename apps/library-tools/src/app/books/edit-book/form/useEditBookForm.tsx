@@ -2,7 +2,6 @@ import { useState } from 'react';
 import { editBookAction } from './editBookAction.ts';
 import { useForm } from '@repo/form/rhf';
 import { TBookForm } from '../../book-form/TBookForm.ts';
-import { logError } from '@repo/client-logger/log';
 
 export const useEditBookForm = ({
   defaultValues,
@@ -29,7 +28,7 @@ export const useEditBookForm = ({
 
     try {
       await handleSubmit(handleValid)();
-    } catch (e) {
+    } catch {
       handleError();
     }
   };
@@ -50,8 +49,7 @@ export const useEditBookForm = ({
         publisher: data.publisher,
       });
       handleSuccess();
-    } catch (e) {
-      logError({ message: 'handleValid failed', error: e as Error });
+    } catch {
       handleError();
     }
   }

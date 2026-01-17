@@ -1,6 +1,5 @@
 import { deleteBooksAction } from './deleteBooksAction.ts';
 import { useState } from 'react';
-import { logError } from '@repo/client-logger/log';
 
 export function useDeleteBooks({
   onError,
@@ -21,8 +20,7 @@ export function useDeleteBooks({
       }
       await deleteBooksAction(bookIds);
       handleSuccess();
-    } catch (e) {
-      logError({ message: 'delete books action failed', error: e as Error });
+    } catch {
       handleError();
     }
   };

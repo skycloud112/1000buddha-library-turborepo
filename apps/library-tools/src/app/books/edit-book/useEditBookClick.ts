@@ -1,7 +1,6 @@
 import { useState } from 'react';
 import { BookResponse } from '@repo/book/BookResponse';
 import { getBookAction } from './form/getBookAction.ts';
-import { logError } from '@repo/client-logger/log';
 
 export const useEditBookClick = ({ onError }: { onError: (error: string) => void }) => {
   const [bookToEdit, setBookToEdit] = useState<BookResponse | null>(null);
@@ -13,8 +12,7 @@ export const useEditBookClick = ({ onError }: { onError: (error: string) => void
       setLoadingBookToEdit(true);
       const { book } = await getBookAction({ bookId });
       handleSuccess(book);
-    } catch (e) {
-      logError({ message: 'edit book action failed', error: e as Error });
+    } catch {
       handleError();
     }
   };

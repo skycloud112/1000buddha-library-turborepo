@@ -1,7 +1,6 @@
 import { useState } from 'react';
 import { BookResponse } from '@repo/book/BookResponse';
 import { getBookAction } from '../edit-book/form/getBookAction.ts';
-import { logError } from '@repo/client-logger/log';
 
 export const useCreateCopyClick = ({ onError }: { onError: (error: string) => void }) => {
   const [bookToCopy, setBookToCopy] = useState<BookResponse | null>(null);
@@ -13,8 +12,7 @@ export const useCreateCopyClick = ({ onError }: { onError: (error: string) => vo
       setLoadingBookToCopy(true);
       const { book } = await getBookAction({ bookId });
       handleSuccess(book);
-    } catch (e) {
-      logError({ message: 'Copy book action failed', error: e as Error });
+    } catch {
       handleError();
     }
   };
