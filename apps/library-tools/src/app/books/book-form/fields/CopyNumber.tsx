@@ -1,4 +1,4 @@
-import { useController } from '@repo/form/rhf';
+import { useController } from 'react-hook-form';
 import TextField from '@mui/material/TextField';
 import { TBookForm } from '../TBookForm.ts';
 

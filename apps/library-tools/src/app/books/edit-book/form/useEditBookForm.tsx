@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { editBookAction } from './editBookAction.ts';
-import { useForm } from '@repo/form/rhf';
+import { useForm } from 'react-hook-form';
 import { TBookForm } from '../../book-form/TBookForm.ts';
 
 export const useEditBookForm = ({

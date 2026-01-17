@@ -17,7 +17,6 @@
     "@repo/csv": "workspace:*",
     "@repo/db-impl": "workspace:*",
     "@repo/entities": "workspace:*",
-    "@repo/form": "workspace:*",
     "@repo/generate-barcode-labels": "workspace:*",
     "@repo/library-card": "workspace:*",
     "@mui/icons-material": "^7.3.7",
@@ -29,7 +28,8 @@
     "iron-session": "^8.0.4",
     "next": "16.1.3",
     "react": "19.2.3",
-    "react-dom": "19.2.3"
+    "react-dom": "19.2.3",
+    "react-hook-form": "7.71.1"
   },
   "devDependencies": {
     "@repo/typescript-config": "workspace:*",

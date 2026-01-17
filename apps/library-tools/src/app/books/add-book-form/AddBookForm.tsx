@@ -1,6 +1,6 @@
 import Stack from '@mui/material/Stack';
 import Alert from '@mui/material/Alert';
-import { FormProvider } from '@repo/form/rhf';
+import { FormProvider } from 'react-hook-form';
 import { useAddBookForm } from './useAddBookForm.tsx';
 import { Barcode } from '../book-form/fields/Barcode/Barcode.tsx';
 import { Title } from '../book-form/fields/Title.tsx';
