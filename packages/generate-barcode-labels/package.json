@@ -10,7 +10,6 @@
     "ts": "tsc --noEmit"
   },
   "dependencies": {
-    "@repo/barcode-generator": "workspace:*",
     "@repo/db": "workspace:*",
     "@repo/entities": "workspace:*",
     "@repo/pdf-renderer": "workspace:*",

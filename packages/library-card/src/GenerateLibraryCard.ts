@@ -1,4 +1,5 @@
 import { binaryToBase64 } from '@repo/utils/binaryToBase64';
+import { generateBarcode } from '@repo/utils/generateBarcode';
 
 export type LibraryCardPdfRenderer = {
   createPdf(params: {
@@ -13,18 +14,11 @@ export type GenerateLibraryCardRequest = {
   barcode: string;
 };
 
-export type BarCodeGenerator = {
-  generate(barcode: string): Promise<Uint8Array>;
-};
-
 export class GenerateLibraryCard {
-  constructor(
-    private barcodeGenerator: BarCodeGenerator,
-    private pdfRenderer: LibraryCardPdfRenderer,
-  ) {}
+  constructor(private pdfRenderer: LibraryCardPdfRenderer) {}
 
   async generate(request: GenerateLibraryCardRequest): Promise<string> {
-    const barcodeImage = await this.barcodeGenerator.generate(request.barcode);
+    const barcodeImage = await generateBarcode(request.barcode);
     const pdfBytes = await this.pdfRenderer.createPdf({
       name: request.name,
       barcodeImage,

@@ -1,8 +1,8 @@
 import { Book } from '@repo/entities/Book';
 import { Db } from '@repo/db/Db';
 import { Avery5160PdfRenderer } from '@repo/pdf-renderer/Avery5160PdfRenderer';
-import { BarcodeGenerator } from '@repo/barcode-generator/BarcodeGenerator';
 import { binaryToBase64 } from '@repo/utils/binaryToBase64';
+import { generateBarcode } from '@repo/utils/generateBarcode';
 
 export type Label = {
   chineseHeaderText: string;
@@ -13,7 +13,6 @@ export type Label = {
 export class GenerateBarcodeLabels {
   constructor(
     private db: Db,
-    private barcodeGenerator: BarcodeGenerator,
     private pdfRenderer: Avery5160PdfRenderer,
   ) {}
 
@@ -40,7 +39,7 @@ export class GenerateBarcodeLabels {
   async createLabel(barcode: string) {
     const label = {
       chineseHeaderText: '千佛寺圖書館',
-      barcodeImage: await this.barcodeGenerator.generate(barcode),
+      barcodeImage: await generateBarcode(barcode),
       barcodeValue: barcode,
     };
     return label;

@@ -10,7 +10,6 @@
     "test": "TZ=UTC vitest run"
   },
   "dependencies": {
-    "@repo/barcode-generator-impl": "workspace:*",
     "@repo/book": "workspace:*",
     "@repo/csv": "workspace:*",
     "@repo/db": "workspace:*",

@@ -7,17 +7,20 @@
     "./isoToDate": "./src/isoToDate.ts",
     "./formatISO9075": "./src/formatISO9075.ts",
     "./averyLabels": "./src/averyLabels.ts",
-    "./binaryToBase64": "./src/binaryToBase64.ts"
+    "./binaryToBase64": "./src/binaryToBase64.ts",
+    "./generateBarcode": "./src/generateBarcode.ts"
   },
   "scripts": {
     "ts": "tsc --noEmit"
   },
   "dependencies": {
+    "bwip-js": "^4.8.0",
     "date-fns": "^4.1.0",
     "uuid": "^13.0.0"
   },
   "devDependencies": {
     "@repo/typescript-config": "workspace:*",
+    "@types/bwip-js": "^3.2.3",
     "@types/uuid": "^11.0.0",
     "typescript": "^5.9.3"
   }
