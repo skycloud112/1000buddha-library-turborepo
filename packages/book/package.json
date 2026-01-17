@@ -21,7 +21,7 @@
     "@repo/date-converter": "workspace:*",
     "@repo/db": "workspace:*",
     "@repo/entities": "workspace:*",
-    "@repo/uuid": "workspace:*"
+    "@repo/utils": "workspace:*"
   },
   "devDependencies": {
     "@repo/typescript-config": "workspace:*",

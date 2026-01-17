@@ -1,7 +1,6 @@
 import { Logger, Seed } from './Seed';
 import { CsvReaderImpl } from './CsvReaderImpl';
 import { DbImpl } from '@repo/db-impl/DbImpl';
-import { UUIDGeneratorImpl } from '@repo/uuid-impl/UUIDGeneratorImpl';
 import { Book } from '@repo/entities/Book';
 import { ISOToDateConverterImpl } from '@repo/date-converter-impl/ISOToDateConverterImpl';
 
@@ -17,9 +16,8 @@ async function main() {
   const isoToDateConverter = new ISOToDateConverterImpl();
   const db = new DbImpl(connectionString!, isoToDateConverter);
   const reader = new CsvReaderImpl();
-  const uuidGenerator = new UUIDGeneratorImpl();
   const logger = new LoggerImpl();
-  const seed = new Seed(db, reader, uuidGenerator, logger);
+  const seed = new Seed(db, reader, logger);
   await seed.execute();
 }
 

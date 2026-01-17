@@ -1,6 +1,6 @@
 import { Db } from '@repo/db/Db';
 import { Book } from '@repo/entities/Book';
-import { UUIDGenerator } from '@repo/uuid/UUIDGenerator';
+import { uuid } from '@repo/utils/uuid';
 
 export interface CsvReader {
   readCsv(filePath: string): Promise<string[][]>;
@@ -14,7 +14,6 @@ export class Seed {
   constructor(
     private db: Db,
     private csvReader: CsvReader,
-    private uuidGenerator: UUIDGenerator,
     private logger: Logger,
   ) {}
 
@@ -29,7 +28,7 @@ export class Seed {
   private async seedRow(row: string[]) {
     await new Promise((resolve) => setTimeout(resolve, 1));
     const book = new Book(
-      this.uuidGenerator.generate(),
+      uuid(),
       row[3] as string,
       row[5] as string,
       row[0] as string,

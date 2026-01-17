@@ -27,7 +27,6 @@
     "@repo/mui": "workspace:*",
     "@repo/pdf-renderer": "workspace:*",
     "@repo/spine-labels": "workspace:*",
-    "@repo/uuid-impl": "workspace:*",
     "iron-session": "^8.0.4",
     "next": "16.1.3",
     "react": "19.2.3",

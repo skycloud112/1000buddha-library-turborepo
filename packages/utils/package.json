@@ -1,15 +1,14 @@
 {
-  "name": "@repo/uuid-impl",
+  "name": "@repo/utils",
   "version": "0.0.0",
   "private": true,
   "exports": {
-    "./UUIDGeneratorImpl": "./src/UUIDGeneratorImpl.ts"
+    "./uuid": "./src/uuid.ts"
   },
   "scripts": {
     "ts": "tsc --noEmit"
   },
   "dependencies": {
-    "@repo/uuid": "workspace:*",
     "uuid": "^13.0.0"
   },
   "devDependencies": {

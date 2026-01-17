@@ -1,6 +1,6 @@
 import { Book } from '@repo/entities/Book';
 import { Db } from '@repo/db/Db';
-import { UUIDGenerator } from '@repo/uuid/UUIDGenerator';
+import { uuid } from '@repo/utils/uuid';
 
 export type AddBookRequest = {
   barcode: string;
@@ -24,10 +24,7 @@ export enum AddBookErrorCode {
 }
 
 export class AddBook {
-  constructor(
-    private db: Db,
-    private uuidGenerator: UUIDGenerator,
-  ) {}
+  constructor(private db: Db) {}
 
   async execute(request: AddBookRequest): Promise<AddBookResponse> {
     const barcodeExists = await this.db.barcodeExists(request.barcode);
@@ -35,7 +32,7 @@ export class AddBook {
       return { errorCode: AddBookErrorCode.BARCODE_EXISTS };
     }
     const newBook = new Book(
-      this.uuidGenerator.generate(),
+      uuid(),
       request.barcode,
       request.title ? request.title.trim() : '',
       request.category ? request.category.trim() : '',

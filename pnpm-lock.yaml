@@ -71,9 +71,6 @@ importers:
       '@repo/spine-labels':
         specifier: workspace:*
         version: link:../../packages/spine-labels
-      '@repo/uuid-impl':
-        specifier: workspace:*
-        version: link:../../packages/uuid-impl
       iron-session:
         specifier: ^8.0.4
         version: 8.0.4
@@ -123,12 +120,9 @@ importers:
       '@repo/entities':
         specifier: workspace:*
         version: link:../../packages/entities
-      '@repo/uuid':
+      '@repo/utils':
         specifier: workspace:*
-        version: link:../../packages/uuid
-      '@repo/uuid-impl':
-        specifier: workspace:*
-        version: link:../../packages/uuid-impl
+        version: link:../../packages/utils
     devDependencies:
       '@fast-csv/parse':
         specifier: ^5.0.5
@@ -213,9 +207,9 @@ importers:
       '@repo/entities':
         specifier: workspace:*
         version: link:../entities
-      '@repo/uuid':
+      '@repo/utils':
         specifier: workspace:*
-        version: link:../uuid
+        version: link:../utils
     devDependencies:
       '@repo/typescript-config':
         specifier: workspace:*
@@ -502,20 +496,8 @@ importers:
 
   packages/typescript-config: {}
 
-  packages/uuid:
-    devDependencies:
-      '@repo/typescript-config':
-        specifier: workspace:*
-        version: link:../typescript-config
-      typescript:
-        specifier: ^5.9.3
-        version: 5.9.3
-
-  packages/uuid-impl:
+  packages/utils:
     dependencies:
-      '@repo/uuid':
-        specifier: workspace:*
-        version: link:../uuid
       uuid:
         specifier: ^13.0.0
         version: 13.0.0

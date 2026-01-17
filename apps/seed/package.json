@@ -11,8 +11,7 @@
     "@repo/db": "workspace:*",
     "@repo/db-impl": "workspace:*",
     "@repo/entities": "workspace:*",
-    "@repo/uuid": "workspace:*",
-    "@repo/uuid-impl": "workspace:*"
+    "@repo/utils": "workspace:*"
   },
   "devDependencies": {
     "@fast-csv/parse": "^5.0.5",
