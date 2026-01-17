@@ -5,7 +5,8 @@
   "exports": {
     "./uuid": "./src/uuid.ts",
     "./isoToDate": "./src/isoToDate.ts",
-    "./formatISO9075": "./src/formatISO9075.ts"
+    "./formatISO9075": "./src/formatISO9075.ts",
+    "./averyLabels": "./src/averyLabels.ts"
   },
   "scripts": {
     "ts": "tsc --noEmit"

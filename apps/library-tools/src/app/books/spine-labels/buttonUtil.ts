@@ -1,4 +1,4 @@
-import { AVERY_5160_MAX_NUMBER_OF_LABELS_PER_PAGE } from '@repo/constants';
+import { AVERY_5160_MAX_NUMBER_OF_LABELS_PER_PAGE } from '@repo/utils/averyLabels';
 
 export function getShouldDisableGenerateSpineLabelsButton(numberOfSelectedBooks: number) {
   const enableGenerateSpineLabelsButton =
