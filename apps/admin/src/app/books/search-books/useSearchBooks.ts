@@ -1,8 +1,7 @@
 import { useState } from 'react';
-import { searchBooksAction } from './searchBooksAction.ts';
 import { BookResponse } from '../../../useCases/BookResponse.ts';
-import { SearchBooksResponse } from '../../../useCases/SearchBooksUseCase.ts';
 import { BookSearchInitialOption } from './InitialOption.ts';
+import { useSearchBooksMutation } from './useSearchBooksMutation.ts';
 
 export function useSearchBooks({
   onError,
@@ -18,7 +17,6 @@ export function useSearchBooks({
   onSearchSuccess: () => void;
   onSearchClickSuccess: () => void;
 }) {
-  const [isLoading, setIsLoading] = useState(false);
   const [searchTerm, setSearchTerm] = useState('');
   const [currentPageBooks, setCurrentPageBooks] = useState<BookResponse[]>(
     initialValues.currentPageBooks,
@@ -27,31 +25,18 @@ export function useSearchBooks({
   const [pageSize, setPageSize] = useState(BookSearchInitialOption.PAGE_SIZE);
   const [totalBookCount, setTotalBookCount] = useState(initialValues.totalBookCount);
 
-  const handleSearchClick = async () => {
-    try {
-      setIsLoading(true);
-      setPage(BookSearchInitialOption.PAGE);
-      const response = await searchBooksAction({
-        searchTerm,
-        page: BookSearchInitialOption.PAGE,
-        pageSize,
-      });
-      handleSearchClickSuccess(response);
-    } catch {
-      handleSearchClickError();
-    }
-  };
+  const { mutateAsync, isPending } = useSearchBooksMutation({ onError });
 
-  const handleSearchClickSuccess = (response: SearchBooksResponse) => {
+  const handleSearchClick = async () => {
+    setPage(BookSearchInitialOption.PAGE);
+    const response = await mutateAsync({
+      searchTerm,
+      page: BookSearchInitialOption.PAGE,
+      pageSize,
+    });
     setCurrentPageBooks(response.currentPageBooks);
     setTotalBookCount(response.totalBookCount);
-    setIsLoading(false);
     onSearchClickSuccess();
-  };
-
-  const handleSearchClickError = () => {
-    onError('Search failed.');
-    setIsLoading(false);
   };
 
   const search = async ({
@@ -63,25 +48,10 @@ export function useSearchBooks({
     page: number;
     pageSize: number;
   }) => {
-    try {
-      setIsLoading(true);
-      const response = await searchBooksAction({ searchTerm, page, pageSize });
-      handleSearchSuccess(response);
-    } catch {
-      handleSearchError();
-    }
-  };
-
-  const handleSearchSuccess = (response: SearchBooksResponse) => {
+    const response = await mutateAsync({ searchTerm, page, pageSize });
     setCurrentPageBooks(response.currentPageBooks);
     setTotalBookCount(response.totalBookCount);
-    setIsLoading(false);
     onSearchSuccess();
-  };
-
-  const handleSearchError = () => {
-    onError('Getting updated search results failed.');
-    setIsLoading(false);
   };
 
   const handleClearClick = async () => {
@@ -115,7 +85,7 @@ export function useSearchBooks({
   return {
     handleClearClick,
     currentPageBooks,
-    isLoading,
+    isLoading: isPending,
     searchTerm,
     handleSearchTermChange,
     reSearch,

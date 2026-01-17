@@ -1,6 +1,5 @@
-import { useState } from 'react';
-import { generateBooksCsvAction } from './generateBooksCsvAction.ts';
 import { createCsvBlob, downloadBlob } from './csvUtil.ts';
+import { useGenerateBooksCsvMutation } from './useGenerateBooksCsvMutation.ts';
 
 export function useGenerateBooksCsv({
   onError,
@@ -9,32 +8,17 @@ export function useGenerateBooksCsv({
   onError: (error: string) => void;
   onSuccess: (message: string) => void;
 }) {
-  const [isLoading, setIsLoading] = useState(false);
+  const { mutateAsync, isPending } = useGenerateBooksCsvMutation({ onError });
 
   const handleGenerateBookCsv = async (bookIds: string[]) => {
-    try {
-      setIsLoading(true);
-      const csvString = await generateBooksCsvAction(bookIds);
-      const blob = createCsvBlob(csvString);
-      downloadBlob(blob, 'books.csv');
-      handleSuccess();
-    } catch {
-      handleError();
-    }
-  };
-
-  function handleSuccess() {
+    const csvString = await mutateAsync(bookIds);
+    const blob = createCsvBlob(csvString);
+    downloadBlob(blob, 'books.csv');
     onSuccess('Successfully generated books csv. Please check the downloaded file.');
-    setIsLoading(false);
-  }
-
-  function handleError() {
-    onError('Generate books csv failed.');
-    setIsLoading(false);
-  }
+  };
 
   return {
     handleGenerateBookCsv,
-    isLoading,
+    isLoading: isPending,
   };
 }

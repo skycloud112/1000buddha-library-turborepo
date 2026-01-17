@@ -1,6 +1,5 @@
-import { generateSpineLabelsAction } from './generateSpineLabelsAction.ts';
 import { base64ToPdfObjectUrl } from '../../../utils/convertUtil.ts';
-import { useState } from 'react';
+import { useGenerateSpineLabelsMutation } from './useGenerateSpineLabelsMutation.ts';
 
 export function useGenerateSpineLabels({
   onError,
@@ -9,32 +8,17 @@ export function useGenerateSpineLabels({
   onError: (error: string) => void;
   onSuccess: (message: string) => void;
 }) {
-  const [isLoading, setIsLoading] = useState(false);
+  const { mutateAsync, isPending } = useGenerateSpineLabelsMutation({ onError });
 
   const handleGenerateSpineLabels = async (bookIds: string[]) => {
-    try {
-      setIsLoading(true);
-      const base64 = await generateSpineLabelsAction(bookIds);
-      const url = base64ToPdfObjectUrl(base64);
-      window.open(url);
-      handleSuccess();
-    } catch {
-      handleError();
-    }
-  };
-
-  function handleSuccess() {
+    const base64 = await mutateAsync(bookIds);
+    const url = base64ToPdfObjectUrl(base64);
+    window.open(url);
     onSuccess('Successfully generated spine labels pdf. Please check the downloaded file.');
-    setIsLoading(false);
-  }
-
-  function handleError() {
-    onError('Generate spine labels pdf failed.');
-    setIsLoading(false);
-  }
+  };
 
   return {
     handleGenerateSpineLabels,
-    isLoading,
+    isLoading: isPending,
   };
 }

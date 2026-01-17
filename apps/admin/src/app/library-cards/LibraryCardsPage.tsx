@@ -6,38 +6,15 @@ import LoadingButton from '@mui/lab/LoadingButton';
 import Stack from '@mui/material/Stack';
 import { useState } from 'react';
 import Alert from '@mui/material/Alert';
-import { createLibraryCardAction } from './createLibraryCardAction.ts';
-import { base64ToPdfObjectUrl } from '../../utils/convertUtil.ts';
+import { useCreateLibraryCard } from './useCreateLibraryCard.ts';
 
 export const LibraryCardsPage = () => {
   const [name, setName] = useState('阿彌陀佛');
   const [barcode, setBarcode] = useState('123456');
-  const [error, setError] = useState<string>('');
-  const [loading, setLoading] = useState(false);
-  const [success, setSuccess] = useState<string>('');
+  const { handleCreate, isLoading, error, success } = useCreateLibraryCard();
 
   const handleClick = async () => {
-    setLoading(true);
-    try {
-      const base64 = await createLibraryCardAction({ name, barcode });
-      const url = base64ToPdfObjectUrl(base64);
-      window.open(url);
-      handleSuccess();
-    } catch {
-      handleError();
-    }
-  };
-
-  const handleSuccess = () => {
-    setSuccess('Successfully created library card. Please check the downloaded file.');
-    setError('');
-    setLoading(false);
-  };
-
-  const handleError = () => {
-    setError('Create library card failed.');
-    setSuccess('');
-    setLoading(false);
+    await handleCreate({ name, barcode });
   };
 
   const enableCreateButton = name && barcode;
@@ -48,7 +25,7 @@ export const LibraryCardsPage = () => {
       <Stack sx={{ p: 2 }} direction={'column'} spacing={1}>
         <TextField label='Name' value={name} onChange={(e) => setName(e.target.value)} />
         <TextField label='Barcode' value={barcode} onChange={(e) => setBarcode(e.target.value)} />
-        <LoadingButton loading={loading} onClick={handleClick} disabled={!enableCreateButton}>
+        <LoadingButton loading={isLoading} onClick={handleClick} disabled={!enableCreateButton}>
           Create library card
         </LoadingButton>
         {success && <Alert severity='success'>{success}</Alert>}
