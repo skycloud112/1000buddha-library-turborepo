@@ -3,7 +3,7 @@ import { Middleware } from './middleware/Middleware.ts';
 import { SessionHandlerImpl } from './middleware/SessionHandlerImpl.ts';
 import { NextResponseUtilsImpl } from './middleware/NextResponseUtilsImpl.ts';
 
-export default async function middleware(req: NextRequest) {
+export default async function proxy(req: NextRequest) {
   if (isServerAction(req)) {
     return NextResponse.next();
   }
