@@ -1,7 +1,7 @@
 'use server';
 
-import { BarcodeLabelPdfRenderer } from '@repo/generate-barcode-labels/BarcodeLabelPdfRenderer';
-import { GenerateBarcodeLabels } from '@repo/generate-barcode-labels/GenerateBarcodeLabels';
+import { BarcodeLabelPdfRenderer } from '../../../useCases/GenerateBarcodeLabelsUseCase/BarcodeLabelPdfRenderer';
+import { GenerateBarcodeLabelsUseCase } from '../../../useCases/GenerateBarcodeLabelsUseCase/GenerateBarcodeLabelsUseCase';
 import { EmptyPdfFileReader } from '@repo/pdf-renderer/EmptyPdfFileReader';
 import { DbImpl } from '@repo/db/DbImpl';
 import { getPostgresUrl } from '../../../utils/env.ts';
@@ -14,6 +14,6 @@ export async function generateBarcodeLabelsAction(bookIds: string[]) {
   const pdfRenderer = new BarcodeLabelPdfRenderer(fileReader);
   pdfRenderer.logger = new LoggerImpl();
   const db = new DbImpl(getPostgresUrl());
-  const useCase = new GenerateBarcodeLabels(db, pdfRenderer);
+  const useCase = new GenerateBarcodeLabelsUseCase(db, pdfRenderer);
   return useCase.execute(bookIds);
 }

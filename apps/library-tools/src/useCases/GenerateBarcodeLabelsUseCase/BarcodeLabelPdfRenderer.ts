@@ -1,4 +1,4 @@
-import { Label } from './GenerateBarcodeLabels';
+import { Label } from './GenerateBarcodeLabelsUseCase';
 import { Avery5160PdfRenderer } from '@repo/pdf-renderer/Avery5160PdfRenderer';
 import { PdfRendererFileReader } from '@repo/pdf-renderer/PdfRenderer';
 

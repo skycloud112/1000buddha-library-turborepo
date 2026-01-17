@@ -10,7 +10,7 @@ export type Label = {
   barcodeValue: string;
 };
 
-export class GenerateBarcodeLabels {
+export class GenerateBarcodeLabelsUseCase {
   constructor(
     private db: Db,
     private pdfRenderer: Avery5160PdfRenderer,
