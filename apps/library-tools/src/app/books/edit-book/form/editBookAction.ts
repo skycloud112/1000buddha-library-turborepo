@@ -1,6 +1,6 @@
 'use server';
 
-import { DbImpl } from '@repo/db-impl/DbImpl';
+import { DbImpl } from '@repo/db/DbImpl';
 import { getPostgresUrl } from '../../../../utils/env.ts';
 import { UpdateBook, UpdateBookRequest } from '@repo/book/UpdateBook';
 import { sessionGuard } from '../../../../session.ts';

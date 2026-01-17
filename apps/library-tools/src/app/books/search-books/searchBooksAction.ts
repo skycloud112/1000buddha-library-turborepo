@@ -1,6 +1,6 @@
 'use server';
 
-import { DbImpl } from '@repo/db-impl/DbImpl';
+import { DbImpl } from '@repo/db/DbImpl';
 import { SearchBooks, SearchBooksResponse } from '@repo/book/SearchBooks';
 import { getPostgresUrl } from '../../../utils/env.ts';
 import { ResponseConverterImpl } from '@repo/book/ResponseConverterImpl';

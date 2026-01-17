@@ -47,9 +47,9 @@ importers:
       '@repo/csv':
         specifier: workspace:*
         version: link:../../packages/csv
-      '@repo/db-impl':
+      '@repo/db':
         specifier: workspace:*
-        version: link:../../packages/db-impl
+        version: link:../../packages/db
       '@repo/entities':
         specifier: workspace:*
         version: link:../../packages/entities
@@ -111,9 +111,6 @@ importers:
       '@repo/db':
         specifier: workspace:*
         version: link:../../packages/db
-      '@repo/db-impl':
-        specifier: workspace:*
-        version: link:../../packages/db-impl
       '@repo/entities':
         specifier: workspace:*
         version: link:../../packages/entities
@@ -236,22 +233,6 @@ importers:
 
   packages/db:
     dependencies:
-      '@repo/entities':
-        specifier: workspace:*
-        version: link:../entities
-    devDependencies:
-      '@repo/typescript-config':
-        specifier: workspace:*
-        version: link:../typescript-config
-      typescript:
-        specifier: ^5.9.3
-        version: 5.9.3
-
-  packages/db-impl:
-    dependencies:
-      '@repo/db':
-        specifier: workspace:*
-        version: link:../db
       '@repo/entities':
         specifier: workspace:*
         version: link:../entities

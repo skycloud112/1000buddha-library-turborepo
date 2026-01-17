@@ -4,7 +4,7 @@ import { BinaryToBase64ConverterImpl } from '@repo/binary-to-base64-impl/BinaryT
 import { BarcodeLabelPdfRenderer } from '@repo/generate-barcode-labels/BarcodeLabelPdfRenderer';
 import { GenerateBarcodeLabels } from '@repo/generate-barcode-labels/GenerateBarcodeLabels';
 import { EmptyPdfFileReader } from '@repo/pdf-renderer/EmptyPdfFileReader';
-import { DbImpl } from '@repo/db-impl/DbImpl';
+import { DbImpl } from '@repo/db/DbImpl';
 import { getPostgresUrl } from '../../../utils/env.ts';
 import { BarcodeGeneratorImpl } from '@repo/barcode-generator-impl/BarcodeGeneratorImpl';
 import { sessionGuard } from '../../../session.ts';

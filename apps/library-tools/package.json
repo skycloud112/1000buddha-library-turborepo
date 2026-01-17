@@ -14,7 +14,7 @@
     "@repo/binary-to-base64-impl": "workspace:*",
     "@repo/book": "workspace:*",
     "@repo/csv": "workspace:*",
-    "@repo/db-impl": "workspace:*",
+    "@repo/db": "workspace:*",
     "@repo/entities": "workspace:*",
     "@repo/generate-barcode-labels": "workspace:*",
     "@repo/library-card": "workspace:*",

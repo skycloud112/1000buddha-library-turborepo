@@ -8,7 +8,6 @@
   },
   "dependencies": {
     "@repo/db": "workspace:*",
-    "@repo/db-impl": "workspace:*",
     "@repo/entities": "workspace:*",
     "@repo/utils": "workspace:*"
   },

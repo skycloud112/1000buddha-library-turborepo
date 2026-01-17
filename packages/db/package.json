@@ -3,16 +3,25 @@
   "version": "0.0.0",
   "private": true,
   "exports": {
-    "./Db": "./src/Db.ts"
+    "./Db": "./src/Db.ts",
+    "./DbImpl": "./src/DbImpl.ts"
   },
   "scripts": {
-    "ts": "tsc --noEmit"
+    "ts": "tsc --noEmit",
+    "test": "TZ=UTC vitest run"
   },
   "dependencies": {
-    "@repo/entities": "workspace:*"
+    "@repo/entities": "workspace:*",
+    "@repo/utils": "workspace:*",
+    "pg": "^8.17.1"
   },
   "devDependencies": {
     "@repo/typescript-config": "workspace:*",
-    "typescript": "^5.9.3"
+    "@testcontainers/postgresql": "^11.11.0",
+    "@types/node": "^25.0.9",
+    "@types/pg": "^8.16.0",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.9.3",
+    "vitest": "^4.0.17"
   }
 }

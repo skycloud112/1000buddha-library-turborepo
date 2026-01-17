@@ -1,4 +1,4 @@
-import { Db } from '@repo/db/Db';
+import { Db } from './Db';
 import { Book } from '@repo/entities/Book';
 import { Pool } from 'pg';
 import { isoToDate } from '@repo/utils/isoToDate';
@@ -147,25 +147,25 @@ export class DbImpl implements Db {
     pageSize: number;
   }): Promise<{ totalBookCount: number; currentPageBooks: Book[] }> {
     const whereClause = `
-        "barcode" ILIKE $1 
-        OR "title" ILIKE $1 
+        "barcode" ILIKE $1
+        OR "title" ILIKE $1
         OR "category" ILIKE $1
-        OR "classification_number" ILIKE $1 
+        OR "classification_number" ILIKE $1
         OR "author_number" ILIKE $1
         OR "year_published" ILIKE $1
         OR "copy_number" ILIKE $1
-        OR "place_of_publication" ILIKE $1 
-        OR "publisher" ILIKE $1 
+        OR "place_of_publication" ILIKE $1
+        OR "publisher" ILIKE $1
         OR "author" ILIKE $1
       `;
     const currentPageResult = await this.pool.query<BookRow>(
-      `SELECT * FROM "public"."Book" 
+      `SELECT * FROM "public"."Book"
         WHERE ${whereClause}
         ORDER BY "date_added" DESC LIMIT $2 OFFSET $3`,
       [`%${searchTerm}%`, pageSize, page * pageSize],
     );
     const countResult = await this.pool.query<{ count: number }>(
-      `SELECT COUNT(*) FROM "public"."Book" 
+      `SELECT COUNT(*) FROM "public"."Book"
         WHERE ${whereClause}`,
       [`%${searchTerm}%`],
     );
@@ -194,8 +194,8 @@ export class DbImpl implements Db {
 
   async getLastBookWithBarcodeStartChar(barcodeStartCharacter: string): Promise<Book | null> {
     const result = await this.pool.query<BookRow>(
-      `SELECT * FROM "public"."Book" 
-        WHERE "barcode" ILIKE $1 
+      `SELECT * FROM "public"."Book"
+        WHERE "barcode" ILIKE $1
         ORDER BY "barcode" DESC LIMIT 1`,
       [`${barcodeStartCharacter}%`],
     );

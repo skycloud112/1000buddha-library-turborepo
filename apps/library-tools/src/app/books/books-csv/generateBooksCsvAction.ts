@@ -1,6 +1,6 @@
 'use server';
 
-import { DbImpl } from '@repo/db-impl/DbImpl';
+import { DbImpl } from '@repo/db/DbImpl';
 import { getPostgresUrl } from '../../../utils/env.ts';
 import { GenerateBooksCsv } from '@repo/csv/GenerateBooksCsv';
 import { CsvGeneratorImpl } from '@repo/csv/CsvGeneratorImpl';

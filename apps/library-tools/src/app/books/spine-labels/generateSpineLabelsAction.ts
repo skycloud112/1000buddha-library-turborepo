@@ -1,6 +1,6 @@
 'use server';
 
-import { DbImpl } from '@repo/db-impl/DbImpl';
+import { DbImpl } from '@repo/db/DbImpl';
 import { getPostgresUrl } from '../../../utils/env.ts';
 import { GenerateSpineLabels } from '@repo/spine-labels/GenerateSpineLabels';
 import { SpineLabelsPdfRenderer } from '@repo/spine-labels/SpineLabelsPdfRenderer';

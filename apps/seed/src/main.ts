@@ -1,6 +1,6 @@
 import { Logger, Seed } from './Seed';
 import { CsvReaderImpl } from './CsvReaderImpl';
-import { DbImpl } from '@repo/db-impl/DbImpl';
+import { DbImpl } from '@repo/db/DbImpl';
 import { Book } from '@repo/entities/Book';
 
 class LoggerImpl implements Logger {
