@@ -1,10 +1,10 @@
 {
-  "name": "@repo/seed",
+  "name": "@repo/scripts",
   "version": "0.0.0",
   "private": true,
   "scripts": {
     "ts": "tsc --noEmit",
-    "seed": "cross-env TZ=UTC ts-node src/main.ts"
+    "seed": "cross-env TZ=UTC ts-node src/seed/main.ts"
   },
   "dependencies": {
     "@repo/db": "workspace:*",

@@ -1,4 +1,8 @@
-# Seed
+# Scripts
+
+Utility scripts for the 1000buddha-library project.
+
+## Seed
 
 Seed books from csv files that converted from excel files.
 
