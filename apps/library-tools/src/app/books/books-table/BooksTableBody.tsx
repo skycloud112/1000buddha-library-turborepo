@@ -1,5 +1,7 @@
-import { TableBody, TableCell, TableRow } from '@repo/mui/Table';
-import { Checkbox } from '@repo/mui/Checkbox';
+import TableBody from '@mui/material/TableBody';
+import TableCell from '@mui/material/TableCell';
+import TableRow from '@mui/material/TableRow';
+import Checkbox from '@mui/material/Checkbox';
 import { MouseEvent } from 'react';
 import { BookResponse } from '@repo/book/BookResponse';
 import { ActionsMenu } from '../../../components/ActionsMenu/ActionsMenu.tsx';

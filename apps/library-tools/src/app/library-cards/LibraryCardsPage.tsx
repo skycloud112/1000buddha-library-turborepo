@@ -1,11 +1,11 @@
 'use client';
 
 import { AppBar } from '../../components/AppBar/AppBar.tsx';
-import { TextField } from '@repo/mui/TextField';
-import { LoadingButton } from '@repo/mui/LoadingButton';
-import { Stack } from '@repo/mui/Stack';
+import TextField from '@mui/material/TextField';
+import LoadingButton from '@mui/lab/LoadingButton';
+import Stack from '@mui/material/Stack';
 import { useState } from 'react';
-import { Alert } from '@repo/mui/Alert';
+import Alert from '@mui/material/Alert';
 import { createLibraryCardAction } from './createLibraryCardAction.ts';
 import { base64ToPdfObjectUrl } from '../../utils/convertUtil.ts';
 import { logError } from '@repo/client-logger/log';

@@ -1,6 +1,6 @@
-import { Stack } from '@repo/mui/Stack';
-import { Button } from '@repo/mui/Button';
-import { TextField } from '@repo/mui/TextField';
+import Stack from '@mui/material/Stack';
+import Button from '@mui/material/Button';
+import TextField from '@mui/material/TextField';
 
 export function Search({
   searchTerm,

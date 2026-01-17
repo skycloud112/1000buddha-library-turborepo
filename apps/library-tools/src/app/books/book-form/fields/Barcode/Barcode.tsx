@@ -1,7 +1,7 @@
 import { useController } from '@repo/form/rhf';
-import { TextField } from '@repo/mui/TextField';
+import TextField from '@mui/material/TextField';
 import { TBookForm } from '../../TBookForm.ts';
-import { Stack } from '@repo/mui/Stack';
+import Stack from '@mui/material/Stack';
 import { Actions } from './Actions.tsx';
 
 export const Barcode = () => {

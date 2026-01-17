@@ -1,5 +1,5 @@
-import { Backdrop } from '@repo/mui/Backdrop';
-import { CircularProgress } from '@repo/mui/CircularProgress';
+import Backdrop from '@mui/material/Backdrop';
+import CircularProgress from '@mui/material/CircularProgress';
 
 export const LoadingOverlay = ({ visible }: { visible: boolean }) => {
   return (

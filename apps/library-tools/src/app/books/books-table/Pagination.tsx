@@ -1,4 +1,4 @@
-import { TablePagination } from '@repo/mui/Table';
+import TablePagination from '@mui/material/TablePagination';
 
 export function Pagination({
   onPageChange,

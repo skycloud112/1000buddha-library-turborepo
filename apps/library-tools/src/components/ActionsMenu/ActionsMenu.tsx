@@ -1,9 +1,10 @@
 import { MouseEvent, useState } from 'react';
-import { Menu, MenuItem } from '@repo/mui/Menu';
-import { Tooltip } from '@repo/mui/Tooltip';
-import { IconButton } from '@repo/mui/IconButton';
-import { MenuIcon } from '@repo/mui/icons';
-import { CircularProgress } from '@repo/mui/CircularProgress';
+import Menu from '@mui/material/Menu';
+import MenuItem from '@mui/material/MenuItem';
+import Tooltip from '@mui/material/Tooltip';
+import IconButton from '@mui/material/IconButton';
+import MenuIcon from '@mui/icons-material/Menu';
+import CircularProgress from '@mui/material/CircularProgress';
 
 export type Action = {
   title: string;
@@ -30,7 +31,8 @@ export const ActionsMenu = ({ actions, isLoading }: { actions: Action[]; isLoadi
             onClick={() => {
               action.onClick();
               handleClose();
-            }}>
+            }}
+          >
             {action.title}
           </MenuItem>
         ))}

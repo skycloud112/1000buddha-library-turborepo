@@ -1,8 +1,10 @@
-import { IconButton } from '@repo/mui/IconButton';
-import { MenuIcon } from '@repo/mui/icons';
+import IconButton from '@mui/material/IconButton';
+import MenuIcon from '@mui/icons-material/Menu';
 import { useState } from 'react';
-import { Drawer } from '@repo/mui/Drawer';
-import { List, ListItem, ListItemButton } from '@repo/mui/List';
+import Drawer from '@mui/material/Drawer';
+import List from '@mui/material/List';
+import ListItem from '@mui/material/ListItem';
+import ListItemButton from '@mui/material/ListItemButton';
 import { useRouter } from 'next/navigation';
 import { Pages } from '../../pages.ts';
 
@@ -47,7 +49,8 @@ const MenuItem = ({
         onClick={() => {
           onClose();
           router.push(href);
-        }}>
+        }}
+      >
         {title}
       </ListItemButton>
     </ListItem>

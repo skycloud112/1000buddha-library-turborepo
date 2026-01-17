@@ -1,10 +1,10 @@
-import { Dialog } from '@repo/mui/Dialog';
-import { AppBar } from '@repo/mui/AppBar';
-import { Toolbar } from '@repo/mui/Toolbar';
-import { IconButton } from '@repo/mui/IconButton';
-import { CloseIcon } from '@repo/mui/icons';
-import { Typography } from '@repo/mui/Typography';
-import { List } from '@repo/mui/List';
+import Dialog from '@mui/material/Dialog';
+import AppBar from '@mui/material/AppBar';
+import Toolbar from '@mui/material/Toolbar';
+import IconButton from '@mui/material/IconButton';
+import Close from '@mui/icons-material/Close';
+import Typography from '@mui/material/Typography';
+import List from '@mui/material/List';
 import { BookResponse } from '@repo/book/BookResponse';
 import { AddBookForm } from '../add-book-form/AddBookForm.tsx';
 import { getInitialValues } from '../book-form/util.ts';
@@ -25,7 +25,7 @@ export function CreateCopyDialog({
       <AppBar sx={{ position: 'relative' }}>
         <Toolbar>
           <IconButton edge='start' color='inherit' onClick={onClose} aria-label='close'>
-            <CloseIcon />
+            <Close />
           </IconButton>
           <Typography sx={{ ml: 2, flex: 1 }} variant='h6' component='div'>
             Create a Copy

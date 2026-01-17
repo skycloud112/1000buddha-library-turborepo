@@ -1,6 +1,7 @@
-import { Paper } from '@repo/mui/Paper';
-import { Table, TableContainer } from '@repo/mui/Table';
-import { Box } from '@repo/mui/Box';
+import Paper from '@mui/material/Paper';
+import Table from '@mui/material/Table';
+import TableContainer from '@mui/material/TableContainer';
+import Box from '@mui/material/Box';
 import { BookResponse } from '@repo/book/BookResponse';
 import { BooksTableHead } from './BooksTableHead.tsx';
 import { BooksTableBody } from './BooksTableBody.tsx';

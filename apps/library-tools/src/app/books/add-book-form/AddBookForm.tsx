@@ -1,5 +1,5 @@
-import { Stack } from '@repo/mui/Stack';
-import { Alert } from '@repo/mui/Alert';
+import Stack from '@mui/material/Stack';
+import Alert from '@mui/material/Alert';
 import { FormProvider } from '@repo/form/rhf';
 import { useAddBookForm } from './useAddBookForm.tsx';
 import { Barcode } from '../book-form/fields/Barcode/Barcode.tsx';
@@ -13,7 +13,7 @@ import { Author } from '../book-form/fields/Author.tsx';
 import { PlaceOfPublication } from '../book-form/fields/PlaceOfPublication.tsx';
 import { Publisher } from '../book-form/fields/Publisher.tsx';
 import { TBookForm } from '../book-form/TBookForm.ts';
-import { LoadingButton } from '@repo/mui/LoadingButton';
+import LoadingButton from '@mui/lab/LoadingButton';
 
 export const AddBookForm = ({
   onAddBookSuccess,

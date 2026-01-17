@@ -1,4 +1,4 @@
-import { CssBaseline } from '@repo/mui/CssBaseLine';
+import CssBaseline from '@mui/material/CssBaseline';
 import { DatadogInit } from '../components/DatadogInit.tsx';
 import { MuiProvider } from '../components/MuiProvider.tsx';
 

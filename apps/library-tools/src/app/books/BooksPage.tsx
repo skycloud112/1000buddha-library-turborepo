@@ -1,9 +1,9 @@
 'use client';
 
-import { Stack } from '@repo/mui/Stack';
-import { Button } from '@repo/mui/Button';
+import Stack from '@mui/material/Stack';
+import Button from '@mui/material/Button';
 import { LoadingOverlay } from '../../components/LoadingOverlay.tsx';
-import { Alert } from '@repo/mui/Alert';
+import Alert from '@mui/material/Alert';
 import { BookSelectionInfoAlert } from './BookSelectionInfoAlert.tsx';
 import { getShouldDisableGenerateSpineLabelsButton } from './spine-labels/buttonUtil.ts';
 import { getShouldDisableGenerateBookCsvButton } from './books-csv/buttonUtil.ts';
@@ -18,7 +18,7 @@ import { useBooksPage } from './useBooksPage.ts';
 import { getShouldDisableGenerateBarcodeLabelsButton } from './barcode/buttonUtil.ts';
 import { CreateCopyDialog } from './create-copy/CreateCopyDialog.tsx';
 import { AppBar } from '../../components/AppBar/AppBar.tsx';
-import { Box } from '@repo/mui/Box';
+import Box from '@mui/material/Box';
 
 export function BooksPage({
   initialBooks,
@@ -81,22 +81,26 @@ export function BooksPage({
             <AddBookIconButton onClick={() => addBook.handleOpenAddBookDialog()} />
             <Button
               onClick={() => handleGenerateBarcodeLabels(selectedBookIds)}
-              disabled={getShouldDisableGenerateBarcodeLabelsButton(numberOfSelectedBooks)}>
+              disabled={getShouldDisableGenerateBarcodeLabelsButton(numberOfSelectedBooks)}
+            >
               Generate Barcode Labels
             </Button>
             <Button
               onClick={() => handleGenerateSpineLabels(selectedBookIds)}
-              disabled={getShouldDisableGenerateSpineLabelsButton(numberOfSelectedBooks)}>
+              disabled={getShouldDisableGenerateSpineLabelsButton(numberOfSelectedBooks)}
+            >
               Generate Spine Labels
             </Button>
             <Button
               onClick={() => handleGenerateBookCsv(selectedBookIds)}
-              disabled={getShouldDisableGenerateBookCsvButton(numberOfSelectedBooks)}>
+              disabled={getShouldDisableGenerateBookCsvButton(numberOfSelectedBooks)}
+            >
               Generate Books CSV
             </Button>
             <Button
               onClick={() => deleteBooks.handleDeleteBooks(selectedBookIds)}
-              disabled={getShouldDisableDeleteBooksButton(numberOfSelectedBooks)}>
+              disabled={getShouldDisableDeleteBooksButton(numberOfSelectedBooks)}
+            >
               Delete Books
             </Button>
           </Stack>

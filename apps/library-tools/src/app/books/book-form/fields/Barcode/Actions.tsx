@@ -1,8 +1,8 @@
 import { ActionsMenu } from '../../../../../components/ActionsMenu/ActionsMenu.tsx';
 import { getNextBarcodeAction } from './getNextBarcodeAction.ts';
 import { useState } from 'react';
-import { Snackbar } from '@repo/mui/Snackbar';
-import { Alert } from '@repo/mui/Alert';
+import Snackbar from '@mui/material/Snackbar';
+import Alert from '@mui/material/Alert';
 
 export const Actions = ({ onSuccess }: { onSuccess: (barcode: string) => void }) => {
   const { isLoading, error, actions, handleErrorChange } = useActions({

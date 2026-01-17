@@ -1,5 +1,5 @@
 import { AppBar } from '../../components/AppBar/AppBar.tsx';
-import { Stack } from '@repo/mui/Stack';
+import Stack from '@mui/material/Stack';
 
 export const NotesPage = () => {
   return (

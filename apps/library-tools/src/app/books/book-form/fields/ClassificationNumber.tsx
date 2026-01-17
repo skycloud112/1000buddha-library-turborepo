@@ -1,5 +1,5 @@
 import { useController } from '@repo/form/rhf';
-import { TextField } from '@repo/mui/TextField';
+import TextField from '@mui/material/TextField';
 import { TBookForm } from '../TBookForm.ts';
 
 export const ClassificationNumber = () => {

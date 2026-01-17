@@ -1,8 +1,8 @@
-import { AppBar as MuiAppBar } from '@repo/mui/AppBar';
-import { Toolbar } from '@repo/mui/Toolbar';
+import MuiAppBar from '@mui/material/AppBar';
+import Toolbar from '@mui/material/Toolbar';
 import { SideMenuButton } from './SideMenuButton.tsx';
 import { LogoutButton } from './LogoutButton/LogoutButton.tsx';
-import { Box } from '@repo/mui/Box';
+import Box from '@mui/material/Box';
 import { Title } from './Title.tsx';
 
 export const AppBar = ({ title }: { title: string }) => {
@@ -16,7 +16,8 @@ export const AppBar = ({ title }: { title: string }) => {
             gridTemplateColumns: '40px auto 40px',
             alignItems: 'center',
             gap: 1,
-          }}>
+          }}
+        >
           <SideMenuButton />
           <Title title={title} />
           <LogoutButton />

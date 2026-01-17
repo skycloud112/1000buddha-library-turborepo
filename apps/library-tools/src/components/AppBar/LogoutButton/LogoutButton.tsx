@@ -1,5 +1,5 @@
-import { IconButton } from '@repo/mui/IconButton';
-import { LogoutIcon } from '@repo/mui/icons';
+import IconButton from '@mui/material/IconButton';
+import Logout from '@mui/icons-material/Logout';
 import { logoutAction } from './logoutAction.ts';
 import { useRouter } from 'next/navigation';
 import { Pages } from '../../../pages.ts';
@@ -14,7 +14,7 @@ export const LogoutButton = () => {
 
   return (
     <IconButton color='inherit' onClick={handleLogout}>
-      <LogoutIcon />
+      <Logout />
     </IconButton>
   );
 };

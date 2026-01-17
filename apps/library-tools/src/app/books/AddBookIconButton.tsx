@@ -1,10 +1,10 @@
-import { IconButton } from '@repo/mui/IconButton';
-import { AddIcon } from '@repo/mui/icons';
+import IconButton from '@mui/material/IconButton';
+import Add from '@mui/icons-material/Add';
 
 export function AddBookIconButton({ onClick }: { onClick: () => void }) {
   return (
     <IconButton onClick={onClick}>
-      <AddIcon />
+      <Add />
     </IconButton>
   );
 }

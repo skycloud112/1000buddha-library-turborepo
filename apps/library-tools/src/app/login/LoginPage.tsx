@@ -1,12 +1,12 @@
 import { useState } from 'react';
-import { TextField } from '@repo/mui/TextField';
-import { Container } from '@repo/mui/Container';
-import { Stack } from '@repo/mui/Stack';
-import { Alert } from '@repo/mui/Alert';
+import TextField from '@mui/material/TextField';
+import Container from '@mui/material/Container';
+import Stack from '@mui/material/Stack';
+import Alert from '@mui/material/Alert';
 import { loginAction } from './loginAction.ts';
 import { useRouter } from 'next/navigation';
 import { Pages } from '../../pages.ts';
-import { LoadingButton } from '@repo/mui/LoadingButton';
+import LoadingButton from '@mui/lab/LoadingButton';
 import { Notification } from './interactor/LoginInteractor.ts';
 
 const NOTIFICATION_TO_MESSAGE_MAP: Record<Notification, string> = {
